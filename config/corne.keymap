@@ -11,11 +11,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-        new_combo {
-            bindings = <&sl 3>;
-            key-positions = <0 1 12 13 24 25>;
-        };
     };
 
     keymap {
@@ -46,7 +41,7 @@
             bindings = <
   &kp TAB    &kp N1     &kp N2     &kp N3   &kp N4     &kp N5        &kp N6        &kp N7        &kp N8            &kp N9  &kp N0  &kp BSPC
     &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END      &none      &kp LEFT      &kp DOWN        &kp UP         &kp RIGHT  &trans    &trans
-&kp LSHFT    &trans     &trans     &trans   &trans     &trans    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY_PAUSE  &trans    &trans
+&kp LSHFT    &trans     &trans     &trans   &trans     &trans    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY_PAUSE  &trans     &sl 3
                                  &kp LGUI    &none  &kp SPACE       &kp RET       &kp ESC      &kp RALT
             >;
         };
