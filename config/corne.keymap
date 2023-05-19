@@ -36,7 +36,7 @@
             >;
         };
 
-        Nav {
+        Lower {
             bindings = <
   &kp TAB  &kp Q  &kp W      &kp E   &kp R      &kp T      &kp Y   &kp U      &kp I    &kp O     &kp P   &kp BSPC
   &kp ESC  &kp A  &kp S      &kp D   &kp F      &kp G      &kp H   &kp J      &kp K    &kp L  &kp SEMI    &kp SQT
@@ -44,7 +44,7 @@
                          &kp LCTRL  &tog 0  &kp SPACE    &kp RET  &tog 3   &kp RALT
             >;
 
-            label = "Nav";
+            label = "Lower";
         };
 
         Raise {
@@ -72,10 +72,10 @@
         BT {
             label = "BT";
             bindings = <
-       &kp TAB  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &trans  &trans
-    &kp ESCAPE        &trans        &trans        &trans        &trans      &trans    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6      &kp KP_PLUS  &trans  &trans
-&kp LEFT_SHIFT        &trans        &trans        &trans        &trans      &trans    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3     &kp KP_EQUAL  &trans  &trans
-                                             &bootloader        &tog 0      &trans             &trans           &tog 0      &bootloader
+       &kp TAB  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_SUBTRACT  &trans  &trans
+    &kp ESCAPE        &trans        &trans        &trans        &trans      &trans    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6      &kp KP_PLUS  &trans  &trans
+&kp LEFT_SHIFT        &trans        &trans        &trans        &trans      &trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp KP_EQUAL  &trans  &trans
+                                             &bootloader        &tog 0      &trans          &trans        &tog 0   &bootloader
             >;
         };
     };
