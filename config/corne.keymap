@@ -39,8 +39,8 @@
         Lower {
             bindings = <
 &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7      &kp NUMBER_8       &kp NUMBER_9          &kp NUMBER_0  &kp BSPC
-  &kp ESC         &kp A         &kp S         &kp D         &kp F         &kp G       &kp MINUS     &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH   &kp SQT
-&kp LSHFT         &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &kp COMMA            &kp DOT              &kp FSLH   &kp TAB
+  &kp ESC         &none         &none         &none         &none         &none       &kp MINUS     &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH     &none
+&kp LSHFT         &none         &none         &none         &none         &none           &none         &none             &none              &none                 &none   &kp TAB
                                           &kp LCTRL        &tog 0     &kp SPACE         &kp RET        &tog 3          &kp RALT
             >;
 
@@ -49,10 +49,10 @@
 
         Raise {
             bindings = <
-&kp GRAVE  &kp F1  &kp F2     &kp F3  &kp F4     &kp F5     &kp F6   &kp F7     &kp F8   &kp F9   &kp F10  &kp BSPC
-  &kp ESC   &kp A   &kp S      &kp D   &kp F      &kp G    &kp F11  &kp F12      &kp K    &kp L  &kp SEMI   &kp SQT
-&kp LSHFT   &kp Z   &kp X      &kp C   &kp V      &kp B      &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH   &kp TAB
-                           &kp LCTRL  &tog 0  &kp SPACE    &kp RET   &tog 3   &kp RALT
+&kp GRAVE  &kp F1  &kp F2     &kp F3  &kp F4     &kp F5     &kp F6   &kp F7    &kp F8  &kp F9  &kp F10  &kp BSPC
+  &kp ESC   &none   &none      &none   &none      &none    &kp F11  &kp F12     &none   &none    &none     &none
+&kp LSHFT   &none   &none      &none   &none      &none      &none    &none     &none   &none    &none   &kp TAB
+                           &kp LCTRL  &tog 0  &kp SPACE    &kp RET   &tog 3  &kp RALT
             >;
 
             label = "Raise";
@@ -60,9 +60,9 @@
 
         Nav {
             bindings = <
- &trans  &trans    &trans  &kp PG_UP   &trans  &trans    &kp C_VOL_DN        &kp K_MUTE  &kp C_VOLUME_UP  &trans  &trans  &trans
-&kp ESC  &trans  &kp HOME  &kp PG_DN  &kp END  &trans      &kp C_PREV  &kp C_PLAY_PAUSE       &kp C_NEXT  &trans  &trans  &trans
- &trans  &trans    &trans     &trans   &trans  &trans          &trans            &trans           &trans  &trans  &trans  &trans
+ &trans  &trans    &trans  &kp PG_UP   &trans  &trans    &kp C_VOL_DN        &kp K_MUTE  &kp C_VOLUME_UP  &trans  &trans  &kp BACKSPACE
+&kp ESC  &trans  &kp HOME  &kp PG_DN  &kp END  &trans      &kp C_PREV  &kp C_PLAY_PAUSE       &kp C_NEXT  &trans  &trans         &trans
+ &trans  &trans    &trans     &trans   &trans  &trans          &trans            &trans           &trans  &trans  &trans         &trans
                               &trans   &tog 0  &trans          &trans            &tog 0           &trans
             >;
 
