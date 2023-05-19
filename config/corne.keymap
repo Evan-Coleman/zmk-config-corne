@@ -43,7 +43,7 @@
 &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3       &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp BSPC
   &kp ESC     &kp MINUS     &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH        &kp LEFT      &kp DOWN        &kp UP     &kp RIGHT         &none     &none
 &kp LSHFT         &none         &none             &none              &none          &none           &none         &none         &none         &none         &none   &kp TAB
-                                              &kp LCTRL              &to 0      &kp SPACE         &kp RET         &to 3      &kp RALT
+                                              &kp LCTRL              &to 0      &kp SPACE         &kp RET         &to 3  &kp LEFT_WIN
             >;
 
             label = "Lower";
@@ -51,10 +51,10 @@
 
         Raise {
             bindings = <
-&kp GRAVE  &kp F1  &kp F2     &kp F3  &kp F4     &kp F5     &kp F6   &kp F7    &kp F8  &kp F9  &kp F10  &kp BSPC
-  &kp ESC   &none   &none      &none   &none      &none    &kp F11  &kp F12     &none   &none    &none     &none
-&kp LSHFT   &none   &none      &none   &none      &none      &none    &none     &none   &none    &none   &kp TAB
-                           &kp LCTRL   &to 0  &kp SPACE    &kp RET    &to 3  &kp RALT
+&kp GRAVE  &kp F1  &kp F2     &kp F3  &kp F4     &kp F5     &kp F6   &kp F7        &kp F8  &kp F9  &kp F10  &kp BSPC
+  &kp ESC   &none   &none      &none   &none      &none    &kp F11  &kp F12         &none   &none    &none     &none
+&kp LSHFT   &none   &none      &none   &none      &none      &none    &none         &none   &none    &none   &kp TAB
+                           &kp LCTRL   &to 0  &kp SPACE    &kp RET    &to 3  &kp LEFT_WIN
             >;
 
             label = "Raise";
@@ -65,7 +65,7 @@
  &trans  &trans    &trans  &kp PG_UP   &trans  &trans    &kp C_VOL_DN        &kp C_MUTE  &kp C_VOLUME_UP  &trans  &trans  &kp BACKSPACE
 &kp ESC  &trans  &kp HOME  &kp PG_DN  &kp END  &trans      &kp C_PREV  &kp C_PLAY_PAUSE       &kp C_NEXT  &trans  &trans         &trans
  &trans  &trans    &trans     &trans   &trans  &trans          &trans            &trans           &trans  &trans  &trans         &trans
-                              &trans    &to 0  &trans          &trans             &to 0           &trans
+                              &trans    &to 0  &trans          &trans             &to 0     &kp LEFT_WIN
             >;
 
             label = "Nav";
@@ -75,7 +75,7 @@
             label = "BT";
             bindings = <
         &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_SUBTRACT  &trans       &kp K_LOCK
-    &kp ESCAPE        &trans        &trans        &trans        &trans      &trans    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6      &kp KP_PLUS  &trans  &kp PRINTSCREEN
+    &kp ESCAPE        &trans        &trans        &trans        &trans      &trans    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6      &kp KP_PLUS   &kp 0  &kp PRINTSCREEN
 &kp LEFT_SHIFT        &trans        &trans        &trans        &trans      &trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp KP_EQUAL  &trans          &kp TAB
                                              &bootloader         &to 0      &trans         &kp RET         &to 0   &bootloader
             >;
