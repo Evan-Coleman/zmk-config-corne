@@ -13,7 +13,7 @@
         compatible = "zmk,combos";
 
         new_combo {
-            bindings = <&tog 4>;
+            bindings = <&to 4>;
             key-positions = <0 1 10 11>;
         };
     };
@@ -40,10 +40,10 @@
 
         Lower {
             bindings = <
-&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7      &kp NUMBER_8       &kp NUMBER_9          &kp NUMBER_0  &kp BSPC
-  &kp ESC         &none         &none         &none         &none         &none       &kp MINUS     &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH     &none
-&kp LSHFT         &none         &none         &none         &none         &none           &none         &none             &none              &none                 &none   &kp TAB
-                                          &kp LCTRL         &to 0     &kp SPACE         &kp RET         &to 3          &kp RALT
+&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3       &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp BSPC
+  &kp ESC     &kp MINUS     &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH        &kp LEFT      &kp DOWN        &kp UP     &kp RIGHT         &none     &none
+&kp LSHFT         &none         &none             &none              &none          &none           &none         &none         &none         &none         &none   &kp TAB
+                                              &kp LCTRL              &to 0      &kp SPACE         &kp RET         &to 3      &kp RALT
             >;
 
             label = "Lower";
