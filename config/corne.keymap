@@ -11,6 +11,11 @@
 / {
     combos {
         compatible = "zmk,combos";
+
+        bt_combo {
+            bindings = <&to 4>;
+            key-positions = <0 1 10 11>;
+        };
     };
 
     behaviors {
