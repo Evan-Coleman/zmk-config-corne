@@ -15,7 +15,8 @@
         Settings {
             bindings = <&to 4>;
             key-positions = <0 1 10 11>;
-            layers = <0 1 2 3 4>;
+            layers = <>;
+            timeout-ms = <50>;
         };
     };
 
