@@ -45,8 +45,6 @@
             bindings =
                 <&kp LEFT_SHIFT>,
                 <&sk LEFT_GUI>;
-
-            tapping-term-ms = <40>;
         };
         tab_CAD_taskMan: tab_CAD_taskMan {
             compatible = "zmk,behavior-tap-dance";
@@ -56,8 +54,6 @@
                 <&kp TAB>,
                 <&kp LA(LC(DEL))>,
                 <&kp LC(LS(ESC))>;
-
-            tapping-term-ms = <40>;
         };
     };
 
