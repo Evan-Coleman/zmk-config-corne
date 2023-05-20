@@ -46,6 +46,15 @@
                 <&kp LEFT_SHIFT>,
                 <&sk LEFT_GUI>;
         };
+        tab_CAD_taskMan: tab_CAD_taskMan {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAB_CAD_TASKMAN";
+            #binding-cells = <0>;
+            bindings =
+                <&kp TAB>,
+                <&kp LA(LC(DEL))>,
+                <&kp LC(LS(ESC))>;
+        };
     };
 
     keymap {
@@ -59,9 +68,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
- &kp GRAVE  &kp Q  &kp W             &kp E  &kp R      &kp T      &kp Y  &kp U         &kp I    &kp O     &kp P  &bkspc_del
-   &kp ESC  &kp A  &kp S             &kp D  &kp F      &kp G      &kp H  &kp J         &kp K    &kp L  &kp SEMI     &kp SQT
-&shift_win  &kp Z  &kp X             &kp C  &kp V      &kp B      &kp N  &kp M     &kp COMMA  &kp DOT  &kp FSLH     &kp TAB
+ &kp GRAVE  &kp Q  &kp W             &kp E  &kp R      &kp T      &kp Y  &kp U         &kp I    &kp O     &kp P        &bkspc_del
+   &kp ESC  &kp A  &kp S             &kp D  &kp F      &kp G      &kp H  &kp J         &kp K    &kp L  &kp SEMI           &kp SQT
+&shift_win  &kp Z  &kp X             &kp C  &kp V      &kp B      &kp N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &tab_CAD_taskMan
                           &kp LEFT_CONTROL  &to 1  &kp SPACE    &kp RET  &to 2  &kp LEFT_ALT
             >;
 
