@@ -113,9 +113,9 @@
         BT {
             label = "BT";
             bindings = <
-     &none  &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3  &bt_clear    &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp KP_SUBTRACT        &none        &bkspc_del
-&kp ESCAPE         &none         &none             &none         &none      &none    &kp NUMBER_4     &kp NUMBER_5  &kp NUMBER_6      &kp KP_PLUS    &kp LG(L)   &kp PRINTSCREEN
-&kp LSHIFT         &none         &none             &none         &none      &none    &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3     &kp KP_EQUAL  &bootloader  &tab_CAD_taskMan
+     &none  &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3  &bt_clear    &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9   &kp KP_MINUS  &kp KP_MULTIPLY        &bkspc_del
+&kp ESCAPE         &none         &none             &none         &none      &none    &kp NUMBER_4     &kp NUMBER_5  &kp NUMBER_6    &kp KP_PLUS        &kp LG(L)   &kp PRINTSCREEN
+&kp LSHIFT         &none         &none             &none         &none      &none    &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp KP_DIVIDE            &none  &tab_CAD_taskMan
                                         &kp LEFT_CONTROL         &to 0  &kp SPACE         &kp RET  &kp KP_NUMBER_0  &kp LEFT_ALT
             >;
         };
