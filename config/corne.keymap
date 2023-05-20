@@ -38,6 +38,14 @@
                 <&none>,
                 <&bt BT_CLR>;
         };
+        shift_win: shift_win {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_WIN";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_SHIFT>,
+                <&sk LEFT_GUI>;
+        };
     };
 
     keymap {
@@ -53,7 +61,7 @@
             bindings = <
  &kp GRAVE  &kp Q  &kp W             &kp E  &kp R      &kp T      &kp Y  &kp U         &kp I    &kp O     &kp P  &bkspc_del
    &kp ESC  &kp A  &kp S             &kp D  &kp F      &kp G      &kp H  &kp J         &kp K    &kp L  &kp SEMI     &kp SQT
-&kp LSHIFT  &kp Z  &kp X             &kp C  &kp V      &kp B      &kp N  &kp M     &kp COMMA  &kp DOT  &kp FSLH     &kp TAB
+&shift_win  &kp Z  &kp X             &kp C  &kp V      &kp B      &kp N  &kp M     &kp COMMA  &kp DOT  &kp FSLH     &kp TAB
                           &kp LEFT_CONTROL  &to 1  &kp SPACE    &kp RET  &to 2  &kp LEFT_ALT
             >;
 
