@@ -62,10 +62,10 @@
 
         Lower {
             bindings = <
- &kp GRAVE     &kp NUMBER_1     &kp NUMBER_2      &kp NUMBER_3       &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &bkspc_del
-   &kp ESC        &kp MINUS        &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH        &kp LEFT      &kp DOWN        &kp UP     &kp RIGHT         &none       &none
-&kp LSHIFT  &kp LS(LA(TAB))  &kp LS(LC(TAB))         &kp LC(W)        &kp LC(TAB)    &kp LA(TAB)    &kp LEFT_WIN         &none         &none         &none         &none     &kp TAB
-                                              &kp LEFT_CONTROL              &to 0      &kp SPACE         &kp RET         &to 3  &kp LEFT_ALT
+       &kp TAB            &kp NUMBER_1     &kp NUMBER_2      &kp NUMBER_3       &kp NUMBER_4             &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &bkspc_del
+  &kp LEFT_ALT               &kp MINUS        &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &kp BACKSLASH        &kp LEFT      &kp DOWN        &kp UP     &kp RIGHT         &none       &none
+&kp LEFT_SHIFT  &kp LC(LG(LEFT_ARROW))  &kp LS(LC(TAB))         &kp LC(W)        &kp LC(TAB)  &kp LG(LC(RIGHT_ARROW))    &kp LEFT_WIN         &none         &none         &none         &none     &kp TAB
+                                                         &kp LEFT_CONTROL              &to 0                &kp SPACE         &kp RET         &to 3  &kp LEFT_ALT
             >;
 
             label = "Lower";
