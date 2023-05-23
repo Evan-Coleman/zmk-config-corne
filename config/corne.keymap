@@ -119,7 +119,7 @@
         Raise {
             bindings = <
     &kp F1     &kp F2     &kp F3            &kp F4                 &kp F5         &kp F6          &kp F7              &kp F8        &kp F9       &kp F10           &kp F11             &bkspc_del
-   &kp ESC  &kp LC(X)  &kp LC(C)         &kp PG_UP              &kp LC(V)   &kp LC(PLUS)         &kp F12            &kp LEFT      &kp DOWN        &kp UP         &kp RIGHT  &mt C_PREVIOUS C_NEXT
+   &kp ESC  &kp LC(X)  &kp LC(C)         &kp PG_UP              &kp LC(V)  &kp LC(EQUAL)         &kp F12            &kp LEFT      &kp DOWN        &kp UP         &kp RIGHT  &mt C_PREVIOUS C_NEXT
 &kp LSHIFT      &none   &kp HOME         &kp PG_DN                &kp END  &kp LC(MINUS)    &kp LEFT_WIN          &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY_PAUSE                &kp TAB
                                   &kp LEFT_CONTROL  &Mod_Layer LEFT_ALT 0      &kp SPACE         &kp RET  &raise_double_home  &kp LEFT_ALT
             >;
