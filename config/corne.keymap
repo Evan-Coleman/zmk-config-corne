@@ -81,6 +81,16 @@
                 <&to 2>,
                 <&to 0>;
         };
+        mom_or_to: mom_or_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOM_OR_TO";
+            bindings =
+                <&mo>,
+                <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -94,10 +104,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
- &kp GRAVE  &kp Q  &kp W             &kp E         &kp R      &kp T      &kp Y  &kp U         &kp I    &kp O     &kp P  &bkspc_del
-   &kp ESC  &kp A  &kp S             &kp D         &kp F      &kp G      &kp H  &kp J         &kp K    &kp L  &kp SEMI     &kp SQT
-&shift_win  &kp Z  &kp X             &kp C         &kp V      &kp B      &kp N  &kp M     &kp COMMA  &kp DOT  &kp FSLH     &kp TAB
-                          &kp LEFT_CONTROL  &double_home  &kp SPACE    &kp RET  &to 2  &kp LEFT_ALT
+ &kp GRAVE  &kp Q  &kp W             &kp E         &kp R      &kp T      &kp Y           &kp U         &kp I    &kp O     &kp P  &bkspc_del
+   &kp ESC  &kp A  &kp S             &kp D         &kp F      &kp G      &kp H           &kp J         &kp K    &kp L  &kp SEMI     &kp SQT
+&shift_win  &kp Z  &kp X             &kp C         &kp V      &kp B      &kp N           &kp M     &kp COMMA  &kp DOT  &kp FSLH     &kp TAB
+                          &kp LEFT_CONTROL  &double_home  &kp SPACE    &kp RET  &mom_or_to 2 2  &kp LEFT_ALT
             >;
 
             label = "Main";
