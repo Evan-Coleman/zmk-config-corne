@@ -108,7 +108,7 @@
             bindings = <
 &kp TAB         &kp NUMBER_1        &kp NUMBER_2     &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5           &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8          &kp NUMBER_9           &kp NUMBER_0  &trans
 &kp LEFT_ALT    &kp MINUS           &kp EQUAL        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH          &kp UNDER     &kp PLUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE      &none
-&kp LEFT_SHIFT  &kp LC(LEFT_ARROW)  &kp LC(LS(TAB))  &mt LA(F4) LC(W)  &kp LC(TAB)        &kp LC(RIGHT_ARROW)    &kp LEFT_WIN  &none         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none         &kp TAB
+&kp LEFT_SHIFT  &kp LC(LEFT_ARROW)  &kp LC(LS(TAB))  &kp LG(Z)         &kp LC(TAB)        &kp LC(RIGHT_ARROW)    &kp LEFT_WIN  &none         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none         &kp TAB
                                                      &kp LEFT_CONTROL  &to 0              &kp SPACE              &trans        &to 2         &kp LEFT_ALT
             >;
 
