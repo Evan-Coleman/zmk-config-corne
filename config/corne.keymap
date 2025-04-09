@@ -86,8 +86,8 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp GRAVE   &kp Q  &kp W  &kp E             &kp R           &kp T        &kp Y       &kp U           &kp I         &kp O    &kp SQT   &kp RET
-&kp ESC     &kp A  &kp S  &kp D             &kp F           &kp G        &kp H       &kp J           &kp K         &kp L    &kp P     &kp SEMI
+&kp GRAVE   &kp Q  &kp W  &kp E             &kp R           &kp T        &kp Y       &kp U           &kp I         &kp O    &kp SEMI  &kp RET
+&kp ESC     &kp A  &kp S  &kp D             &kp F           &kp G        &kp H       &kp J           &kp K         &kp L    &kp P     &kp SQT
 &shift_win  &kp Z  &kp X  &kp C             &kp V           &kp B        &kp N       &kp M           &kp COMMA     &kp DOT  &kp FSLH  &kp TAB
                           &kp LEFT_CONTROL  &mom_or_to 1 1  &kp SPACE    &bkspc_del  &mom_or_to 2 2  &kp LEFT_ALT
             >;
@@ -97,10 +97,10 @@
 
         Lower {
             bindings = <
-&kp TAB         &kp NUMBER_1            &kp NUMBER_2     &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5               &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8          &kp NUMBER_9           &kp NUMBER_0  &bkspc_del
+&kp TAB         &kp NUMBER_1            &kp NUMBER_2     &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5               &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8          &kp NUMBER_9           &kp NUMBER_0  &trans
 &kp LEFT_ALT    &kp MINUS               &kp EQUAL        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH              &kp UNDER     &kp PLUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE      &none
 &kp LEFT_SHIFT  &kp LC(LG(LEFT_ARROW))  &kp LS(LC(TAB))  &mt LA(F4) LC(W)  &kp LC(TAB)        &kp LG(LC(RIGHT_ARROW))    &kp LEFT_WIN  &none         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none         &kp TAB
-                                                         &kp LEFT_CONTROL  &to 0              &kp SPACE                  &kp RET       &to 2         &kp LEFT_ALT
+                                                         &kp LEFT_CONTROL  &to 0              &kp SPACE                  &trans        &to 2         &kp LEFT_ALT
             >;
 
             label = "Lower";
