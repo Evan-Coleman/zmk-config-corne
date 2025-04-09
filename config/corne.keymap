@@ -73,6 +73,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        back_forward: back_forward {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACK_FORWARD";
+            bindings = <&kp C_NEXT>, <&kp C_PREV>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
@@ -97,10 +106,10 @@
 
         Lower {
             bindings = <
-&kp TAB         &kp NUMBER_1            &kp NUMBER_2     &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5               &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8          &kp NUMBER_9           &kp NUMBER_0  &trans
-&kp LEFT_ALT    &kp MINUS               &kp EQUAL        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH              &kp UNDER     &kp PLUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE      &none
-&kp LEFT_SHIFT  &kp LC(LG(LEFT_ARROW))  &kp LS(LC(TAB))  &mt LA(F4) LC(W)  &kp LC(TAB)        &kp LG(LC(RIGHT_ARROW))    &kp LEFT_WIN  &none         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none         &kp TAB
-                                                         &kp LEFT_CONTROL  &to 0              &kp SPACE                  &trans        &to 2         &kp LEFT_ALT
+&kp TAB         &kp NUMBER_1        &kp NUMBER_2     &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5           &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8          &kp NUMBER_9           &kp NUMBER_0  &trans
+&kp LEFT_ALT    &kp MINUS           &kp EQUAL        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH          &kp UNDER     &kp PLUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE      &none
+&kp LEFT_SHIFT  &kp LC(LEFT_ARROW)  &kp LC(LS(TAB))  &mt LA(F4) LC(W)  &kp LC(TAB)        &kp LC(RIGHT_ARROW)    &kp LEFT_WIN  &none         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none         &kp TAB
+                                                     &kp LEFT_CONTROL  &to 0              &kp SPACE              &trans        &to 2         &kp LEFT_ALT
             >;
 
             label = "Lower";
@@ -108,10 +117,10 @@
 
         Raise {
             bindings = <
-&kp F1      &kp F2     &kp F3     &kp F4            &kp F5                 &kp F6           &kp F7        &kp F8              &kp F9        &kp F10       &kp F11           &bkspc_del
-&kp ESC     &kp LC(X)  &kp LC(C)  &kp PG_UP         &kp LC(V)              &kp LC(EQUAL)    &kp F12       &kp LEFT            &kp DOWN      &kp UP        &kp RIGHT         &mt C_PREVIOUS C_NEXT
-&kp LSHIFT  &none      &kp HOME   &kp PG_DN         &kp END                &kp LC(MINUS)    &kp LEFT_WIN  &kp C_MUTE          &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY_PAUSE  &kp TAB
-                                  &kp LEFT_CONTROL  &Mod_Layer LEFT_ALT 0  &kp SPACE        &kp RET       &raise_double_home  &kp LEFT_ALT
+&kp F1      &kp F2     &kp F3     &kp F4            &kp F5                 &kp F6           &kp F7        &kp F8              &kp F9        &kp F10       &kp F11           &kp F12
+&kp ESC     &kp LG(X)  &kp LG(C)  &kp PG_UP         &kp LG(V)              &kp LG(EQUAL)    &kp LEFT      &kp DOWN            &kp UP        &kp RIGHT     &none             &back_forward
+&kp LSHIFT  &none      &kp HOME   &kp PG_DN         &kp END                &kp LG(MINUS)    &kp LEFT_WIN  &kp C_MUTE          &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PLAY_PAUSE  &kp TAB
+                                  &kp LEFT_CONTROL  &Mod_Layer LEFT_ALT 0  &kp SPACE        &bkspc_del    &raise_double_home  &kp LEFT_ALT
             >;
 
             label = "Raise";
