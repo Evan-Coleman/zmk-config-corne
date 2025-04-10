@@ -1,0 +1,220 @@
+layout: {zmk_keyboard: corne}
+layers:
+  Main:
+  - {t: '`', s: '~'}
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - {t: ;, s: ':'}
+  - RET
+  - $$mdi:keyboard-esc$$
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - P
+  - {t: '''', s: '"'}
+  - '&shift_win'
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
+  - $$mdi:keyboard-tab$$
+  - LEFT CONTROL
+  - {t: Lower, h: Lower}
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
+  - {t: Raise, h: Raise}
+  - LEFT ALT
+  Lower:
+  - $$mdi:keyboard-tab$$
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: '$$mdi:transfer$$', type: trans}
+  - LEFT ALT
+  - {t: '-', s: _}
+  - {t: '=', s: +}
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
+  - {t: \, s: '|'}
+  - _
+  - +
+  - '{'
+  - '}'
+  - '|'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - LEFT SHIFT
+  - Ctl+Gui+LEFT ARROW
+  - Sft+Ctl+$$mdi:keyboard-tab$$
+  - {t: Ctl+W, h: Alt+F4}
+  - Ctl+$$mdi:keyboard-tab$$
+  - Gui+Ctl+RIGHT ARROW
+  - LEFT WIN
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - (
+  - )
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:keyboard-tab$$
+  - LEFT CONTROL
+  - {t: Main, h: toggle, type: held}
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: Raise, h: toggle}
+  - LEFT ALT
+  Raise:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
+  - $$mdi:keyboard-esc$$
+  - Ctl+X
+  - Ctl+C
+  - $$mdi:transfer-up$$
+  - Ctl+V
+  - {t: Ctl+=, s: Ctl++}
+  - F12
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:skip-next$$', h: PREVIOUS}
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - HOME
+  - $$mdi:transfer-down$$
+  - END
+  - {t: Ctl+-, s: Ctl+_}
+  - LEFT WIN
+  - $$mdi:volume-off$$
+  - $$mdi:volume-low$$
+  - $$mdi:volume-high$$
+  - PLAY PAUSE
+  - $$mdi:keyboard-tab$$
+  - LEFT CONTROL
+  - {t: Main, h: LEFT ALT}
+  - $$mdi:keyboard-space$$
+  - RET
+  - {t: '&raise_double_home', type: held}
+  - LEFT ALT
+  Nav:
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:transfer-up$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:volume-off$$
+  - PLAY PAUSE
+  - $$mdi:volume-off$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
+  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - HOME
+  - $$mdi:transfer-down$$
+  - END
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - PREVIOUS
+  - VOLUME DOWN
+  - VOLUME UP
+  - $$mdi:skip-next$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - LEFT WIN
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: BT, h: toggle}
+  - LEFT CONTROL
+  - {t: Main, h: toggle}
+  - $$mdi:keyboard-space$$
+  - RET
+  - {t: Main, h: toggle}
+  - LEFT ALT
+  BT:
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - '&bt_clear'
+  - '7'
+  - '8'
+  - '9'
+  - KP MINUS
+  - KP MULTIPLY
+  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
+  - ESCAPE
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '4'
+  - '5'
+  - '6'
+  - KP PLUS
+  - Gui+L
+  - PRINTSCREEN
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '1'
+  - '2'
+  - '3'
+  - KP DIVIDE
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&tab_CAD_taskMan'
+  - LEFT CONTROL
+  - {t: Main, h: toggle}
+  - $$mdi:keyboard-space$$
+  - RET
+  - KP 0
+  - LEFT ALT
+combos:
+- p: [0, 1, 10, 11]
+  k: {t: BT, h: toggle}

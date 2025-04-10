@@ -1,0 +1,3 @@
+[tools]
+# "pipx:keymap-drawer" = "latest"
+"pipx:caksoylar/keymap-drawer" = "main"
