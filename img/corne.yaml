@@ -14,16 +14,16 @@ layers:
   - {t: ;, s: ':'}
   - RET
   - $$mdi:keyboard-esc$$
-  - A
-  - S
-  - D
-  - F
-  - G
-  - H
-  - J
-  - K
-  - L
-  - P
+  - {t: A, h: LEFT SHIFT}
+  - {t: S, h: LEFT CONTROL}
+  - {t: D, h: LEFT ALT}
+  - {t: F, h: LEFT GUI}
+  - {t: G, h: Meh+LEFT GUI}
+  - {t: H, h: Sft+AltGr+Ctl+RIGHT GUI}
+  - {t: J, h: RIGHT GUI}
+  - {t: K, h: RIGHT ALT}
+  - {t: L, h: RIGHT CONTROL}
+  - {t: P, h: RIGHT SHIFT}
   - {t: '''', s: '"'}
   - '&shift_win'
   - Z
@@ -37,14 +37,14 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - $$mdi:keyboard-tab$$
-  - LEFT CONTROL
+  - $$mdi:keyboard-tab$$
   - {t: Lower, h: Lower}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
   - {t: Raise, h: Raise}
-  - LEFT ALT
+  - {t: '`', s: '~'}
   Lower:
-  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '1'
   - '2'
   - '3'
@@ -55,37 +55,37 @@ layers:
   - '8'
   - '9'
   - '0'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - LEFT ALT
-  - {t: '-', s: _}
-  - {t: '=', s: +}
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
-  - {t: \, s: '|'}
-  - _
-  - +
-  - '{'
-  - '}'
-  - '|'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - LEFT SHIFT
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '-', h: LEFT SHIFT, s: _}
+  - {t: '=', h: LEFT CONTROL, s: +}
+  - {t: '[', h: LEFT ALT, s: '{'}
+  - {t: ']', h: LEFT GUI, s: '}'}
+  - {t: \, h: Meh+LEFT GUI, s: '|'}
+  - {t: _, h: Sft+AltGr+Ctl+RIGHT GUI}
+  - {t: +, h: RIGHT GUI}
+  - {t: '{', h: RIGHT ALT}
+  - {t: '}', h: RIGHT CONTROL}
+  - {t: '|', h: RIGHT SHIFT}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Ctl+LEFT ARROW
   - Ctl+Sft+$$mdi:keyboard-tab$$
   - Gui+Z
   - Ctl+$$mdi:keyboard-tab$$
   - Ctl+RIGHT ARROW
-  - LEFT WIN
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - (
   - )
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:keyboard-tab$$
-  - LEFT CONTROL
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: Main, h: toggle, type: held}
-  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: Raise, h: toggle}
-  - LEFT ALT
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   Raise:
   - F1
   - F2
@@ -99,36 +99,36 @@ layers:
   - F10
   - F11
   - F12
-  - $$mdi:keyboard-esc$$
-  - Gui+X
-  - Gui+C
-  - $$mdi:transfer-up$$
-  - Gui+V
-  - {t: Gui+=, s: Gui++}
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: Gui+X, h: LEFT SHIFT}
+  - {t: Gui+C, h: LEFT CONTROL}
+  - {t: '$$mdi:transfer-up$$', h: LEFT ALT}
+  - {t: Gui+V, h: Gui+LEFT GUI}
+  - {t: Gui+=, h: Meh+LEFT GUI, s: Gui++}
+  - {t: '$$mdi:arrow-left-bold$$', h: Sft+AltGr+Ctl+RIGHT GUI}
+  - {t: '$$mdi:arrow-down-bold$$', h: RIGHT GUI}
+  - {t: '$$mdi:arrow-up-bold$$', h: RIGHT ALT}
+  - {t: '$$mdi:arrow-right-bold$$', h: RIGHT CONTROL}
+  - RIGHT SHIFT
   - {t: '$$mdi:skip-next$$', s: '$$mdi:skip-previous$$'}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - HOME
   - $$mdi:transfer-down$$
   - END
   - {t: Gui+-, s: Gui+_}
-  - LEFT WIN
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:volume-off$$
   - $$mdi:volume-low$$
   - $$mdi:volume-high$$
   - PLAY PAUSE
-  - $$mdi:keyboard-tab$$
-  - LEFT CONTROL
-  - {t: Main, h: LEFT ALT}
-  - $$mdi:keyboard-space$$
-  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
-  - {t: '&raise_double_home', type: held}
-  - LEFT ALT
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: Lower, h: toggle}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: Main, h: toggle, type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   Nav:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
