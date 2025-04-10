@@ -69,11 +69,11 @@ layers:
   - '|'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - LEFT SHIFT
-  - Ctl+Gui+LEFT ARROW
-  - Sft+Ctl+$$mdi:keyboard-tab$$
-  - {t: Ctl+W, h: Alt+F4}
+  - Ctl+LEFT ARROW
+  - Ctl+Sft+$$mdi:keyboard-tab$$
+  - Gui+Z
   - Ctl+$$mdi:keyboard-tab$$
-  - Gui+Ctl+RIGHT ARROW
+  - Ctl+RIGHT ARROW
   - LEFT WIN
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - (
@@ -98,25 +98,25 @@ layers:
   - F9
   - F10
   - F11
-  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
-  - $$mdi:keyboard-esc$$
-  - Ctl+X
-  - Ctl+C
-  - $$mdi:transfer-up$$
-  - Ctl+V
-  - {t: Ctl+=, s: Ctl++}
   - F12
+  - $$mdi:keyboard-esc$$
+  - Gui+X
+  - Gui+C
+  - $$mdi:transfer-up$$
+  - Gui+V
+  - {t: Gui+=, s: Gui++}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:skip-next$$', h: PREVIOUS}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:skip-next$$', s: '$$mdi:skip-previous$$'}
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - HOME
   - $$mdi:transfer-down$$
   - END
-  - {t: Ctl+-, s: Ctl+_}
+  - {t: Gui+-, s: Gui+_}
   - LEFT WIN
   - $$mdi:volume-off$$
   - $$mdi:volume-low$$
@@ -126,7 +126,7 @@ layers:
   - LEFT CONTROL
   - {t: Main, h: LEFT ALT}
   - $$mdi:keyboard-space$$
-  - RET
+  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
   - {t: '&raise_double_home', type: held}
   - LEFT ALT
   Nav:
