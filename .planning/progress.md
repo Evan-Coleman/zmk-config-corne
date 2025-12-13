@@ -9,13 +9,14 @@
 - [x] Add Caps Word combo (F+J) + configure continue-list
 - [x] Build verified passing (GitHub Actions)
 
-## Phase 2: Comfort Features
+## Phase 2: Comfort Features ✓ Complete
 
-- [ ] Tri-layer setup (Lower+Raise = BT)
-- [ ] Alt-Tab swapper
-- [ ] ESC combo (W+E) - optional
-- [ ] Backspace combo (I+O) - optional
-- [ ] Enter combo (K+L) - optional
+- [x] Tri-layer setup (Lower+Raise = BT)
+- [x] Cmd-Tab swapper (on Lower layer: N=swap, M=reverse)
+- [x] ESC combo (W+E)
+- [x] Backspace combo (I+O)
+- [x] Enter combo (K+L)
+- [x] Build verified passing
 
 ## Phase 3: Advanced Features
 
@@ -42,8 +43,9 @@
 | **Smart Shift** | Tap=sticky shift, hold=shift, double-tap=caps word | Done |
 | **Symbol Combos** | @#$%^&* + brackets + operators for iOS/JS/Java | Done |
 | **Caps Word** | F+J combo, continues on underscore/minus | Done |
-| **Tri-Layer** | Hold both thumbs = BT layer | Pending |
-| **Swapper** | Single key Alt-Tab cycling | Pending |
+| **Tri-Layer** | Hold both thumbs = BT layer | Done |
+| **Swapper** | Cmd-Tab cycling (Lower: N=fwd, M=rev) | Done |
+| **Comfort Combos** | W+E=ESC, I+O=BSPC, K+L=ENTER | Done |
 | **Mouse Layer** | WASD mouse control | Pending |
 | **Leader Key** | Vim-style command sequences | Pending |
 
@@ -64,4 +66,19 @@ D+C=~  F+V=\  J+M=-  K+,=_  L+.==  P+/=+
 SPECIAL:
 .+/ = =>  (arrow function)
 F+J = Caps Word
+
+COMFORT (Phase 2):
+W+E = ESC   I+O = BSPC   K+L = ENTER
+```
+
+## Swapper Quick Reference (Phase 2)
+
+```
+On Lower layer (hold left thumb):
+N = Cmd-Tab swapper (tap to start, keep tapping to cycle)
+M = Shift+Tab (reverse direction while in swapper)
+Any other key = Confirm selection and release Cmd
+
+Tri-Layer:
+Hold Lower + Raise simultaneously = BT layer
 ```
