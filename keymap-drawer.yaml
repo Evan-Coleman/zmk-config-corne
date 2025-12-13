@@ -1,0 +1,134 @@
+# Keymap Drawer Configuration
+# See: https://github.com/caksoylar/keymap-drawer
+
+# Layout configuration for 6-column Corne (42 keys)
+layout:
+  qmk_keyboard: crkbd/rev1
+
+# Drawing settings
+draw_config:
+  # Key size
+  key_w: 60
+  key_h: 56
+
+  # Spacing
+  split_gap: 30
+  combo_w: 24
+  combo_h: 22
+
+  # Style
+  outer_pad_w: 2
+  outer_pad_h: 2
+
+  # Show combo positions
+  draw_key_sides: false
+
+  # Dark mode friendly colors
+  svg_style: |
+    svg {
+      font-family: "JetBrains Mono", "Fira Code", monospace;
+      font-size: 12px;
+    }
+    .held {
+      fill: #a6e3a1;
+    }
+    .tap {
+      fill: #cdd6f4;
+    }
+    .combo {
+      fill: #f9e2af;
+    }
+
+# Parse settings for ZMK
+parse_config:
+  # Recognize custom behaviors
+  zmk_keycode_map:
+    # Smart behaviors
+    smart_shft: "Smart⇧"
+    adaptive_shft: "Magic"
+    magic_key: "Magic"
+    swapper: "⌘Tab"
+    leader: "Leader"
+    smart_mouse: "Mouse"
+
+    # Layer behaviors
+    lower_td: "Lower"
+    raise_td: "Raise"
+
+    # Custom behaviors
+    bkspc_del: "⌫/⌦"
+    caps_ptsc: "Caps"
+    bt_clear: "BT Clr"
+    shift_win: "⇧/⌘"
+    back_forward: "⏭/⏮"
+
+    # Mouse keys
+    U_MS_U: "M↑"
+    U_MS_D: "M↓"
+    U_MS_L: "M←"
+    U_MS_R: "M→"
+    U_WH_U: "Scr↑"
+    U_WH_D: "Scr↓"
+    U_WH_L: "Scr←"
+    U_WH_R: "Scr→"
+
+  # Raw binding map for special keys
+  raw_binding_map:
+    "&kp GRAVE": "`"
+    "&kp SQT": "'"
+    "&kp SEMI": ";"
+    "&kp FSLH": "/"
+    "&kp BSLH": "\\"
+    "&kp MINUS": "-"
+    "&kp EQUAL": "="
+    "&kp LBKT": "["
+    "&kp RBKT": "]"
+    "&kp LBRC": "{"
+    "&kp RBRC": "}"
+    "&kp LPAR": "("
+    "&kp RPAR": ")"
+    "&kp UNDER": "_"
+    "&kp PLUS": "+"
+    "&kp PIPE": "|"
+
+    # Modifiers
+    "&kp LSHFT": "⇧"
+    "&kp RSHFT": "⇧"
+    "&kp LCTRL": "⌃"
+    "&kp RCTRL": "⌃"
+    "&kp LALT": "⌥"
+    "&kp RALT": "⌥"
+    "&kp LGUI": "⌘"
+    "&kp RGUI": "⌘"
+
+    # Navigation
+    "&kp LEFT": "←"
+    "&kp DOWN": "↓"
+    "&kp UP": "↑"
+    "&kp RIGHT": "→"
+    "&kp HOME": "Home"
+    "&kp END": "End"
+    "&kp PG_UP": "PgUp"
+    "&kp PG_DN": "PgDn"
+
+    # Media
+    "&kp C_VOL_UP": "🔊"
+    "&kp C_VOL_DN": "🔉"
+    "&kp C_MUTE": "🔇"
+    "&kp C_PLAY_PAUSE": "⏯"
+    "&kp C_NEXT": "⏭"
+    "&kp C_PREV": "⏮"
+
+    # Mouse
+    "&mkp MB1": "LClick"
+    "&mkp MB2": "RClick"
+    "&mkp MB3": "MClick"
+
+# Layer names
+layers:
+  Main: Main
+  Lower: Lower
+  Raise: Raise
+  BT: BT
+  Nav: Nav
+  Mouse: Mouse

@@ -25,12 +25,12 @@
 - [x] Key repeat functionality (tap magic key after alpha = repeat)
 - [ ] Unicode characters (skipped - OS-dependent complexity)
 
-## Phase 4: Polish
+## Phase 4: Polish ✓ Complete
 
-- [ ] Reorganize symbols layer
-- [ ] Add visual reference cards
-- [ ] Local nix build setup
-- [ ] Keymap drawer visualization
+- [x] Visual reference cards (.planning/keymap-reference.md)
+- [x] Local nix build setup (flake.nix + justfile)
+- [x] Keymap drawer visualization (keymap-drawer.yaml + workflow)
+- [ ] Reorganize symbols layer (skipped - combos supplement well)
 
 ---
 
