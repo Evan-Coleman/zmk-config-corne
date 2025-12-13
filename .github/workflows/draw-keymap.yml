@@ -8,6 +8,9 @@ on:
       - config/*.dtsi
       - keymap-drawer.yaml
 
+permissions:
+  contents: write
+
 jobs:
   draw:
     runs-on: ubuntu-latest
