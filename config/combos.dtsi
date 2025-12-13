@@ -3,6 +3,13 @@
  * Uses zmk-helpers/key-labels/42.h for position labels
  * Optimized for iOS/Swift, JavaScript/TypeScript, and Java
  *
+ * COMBO QUICK REFERENCE:
+ * Symbols (vertical):  Q+A=!  W+S=@  E+D=#  R+F=$  T+G=%  Y+H=^  U+J=&  I+K=*  ;+P=?
+ * Brackets (horiz):    E+R=(  U+I=)  D+F=[  J+K=]  C+V={  ,+.=}  R+T=<  Y+U=>
+ * Operators (diag):    D+C=~  F+V=\  J+M=-  K+,=_  L+.==  P+/=+
+ * Programming:         .+/==>  H+N=->  G+H=&&  L+P=||
+ * Comfort:             W+E=ESC  I+O=BSPC  K+L=ENTER  F+J=CapsWord
+ *
  * Key positions:
  * ╭─────────────────────────────╮ ╭─────────────────────────────╮
  * │  0  1  2  3  4  5           │ │  6  7  8  9 10 11           │
@@ -40,6 +47,22 @@
         };
 
         // ========== TIER 1: SYMBOLS (Vertical - top + home row) ==========
+
+        combo_excl {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            require-prior-idle-ms = <COMBO_IDLE_SLOW>;
+            key-positions = <1 13>;  // Q + A
+            bindings = <&kp EXCL>;   // !
+            layers = <0>;
+        };
+
+        combo_qmark {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            require-prior-idle-ms = <COMBO_IDLE_SLOW>;
+            key-positions = <10 22>; // ; + P
+            bindings = <&kp QMARK>;  // ?
+            layers = <0>;
+        };
 
         combo_at {
             timeout-ms = <COMBO_TERM_SLOW>;
@@ -213,13 +236,37 @@
             layers = <0>;
         };
 
-        // ========== SPECIAL: Arrow Function ==========
+        // ========== SPECIAL: Programming Operators ==========
 
         combo_arrow {
             timeout-ms = <COMBO_TERM_SLOW>;
             require-prior-idle-ms = <COMBO_IDLE_SLOW>;
             key-positions = <33 34>; // . + /
             bindings = <&arrow_fn>;  // =>
+            layers = <0>;
+        };
+
+        combo_thin_arrow {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            require-prior-idle-ms = <COMBO_IDLE_SLOW>;
+            key-positions = <18 30>; // H + N (vertical, arrow-like)
+            bindings = <&thin_arrow>; // ->
+            layers = <0>;
+        };
+
+        combo_or {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            require-prior-idle-ms = <COMBO_IDLE_SLOW>;
+            key-positions = <21 22>; // L + P (horizontal adjacent)
+            bindings = <&double_pipe>; // ||
+            layers = <0>;
+        };
+
+        combo_and {
+            timeout-ms = <COMBO_TERM_SLOW>;
+            require-prior-idle-ms = <COMBO_IDLE_SLOW>;
+            key-positions = <17 18>; // G + H (horizontal center)
+            bindings = <&double_amp>; // &&
             layers = <0>;
         };
 
@@ -265,6 +312,30 @@
             label = "ARROW_FN";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT>;
+        };
+
+        // Thin arrow macro: -> (Swift function types)
+        thin_arrow: thin_arrow {
+            compatible = "zmk,behavior-macro";
+            label = "THIN_ARROW";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+        };
+
+        // Logical OR macro: ||
+        double_pipe: double_pipe {
+            compatible = "zmk,behavior-macro";
+            label = "DOUBLE_PIPE";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE &kp PIPE>;
+        };
+
+        // Logical AND macro: &&
+        double_amp: double_amp {
+            compatible = "zmk,behavior-macro";
+            label = "DOUBLE_AMP";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS &kp AMPS>;
         };
     };
 };

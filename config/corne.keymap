@@ -158,6 +158,15 @@
             bindings = <&kp CAPS>, <&kp PRINTSCREEN>;
         };
 
+        // Semicolon tap-dance: tap = ;, double-tap = :
+        semi_colon: semi_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SEMI_COLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SEMI>, <&kp COLON>;
+        };
+
         // Cmd-Tab swapper: tap to cycle windows, other keys release Cmd
         // For macOS: uses LGUI (Cmd) instead of LALT
         swapper: swapper {
@@ -221,7 +230,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp GRAVE   &kp Q             &kp W               &kp E           &kp R           &kp T                         &kp Y                        &kp U            &kp I            &kp O                &kp SEMI           &caps_ptsc
+&kp GRAVE   &kp Q             &kp W               &kp E           &kp R           &kp T                         &kp Y                        &kp U            &kp I            &kp O                &semi_colon        &caps_ptsc
 &kp ESC     &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_GUI F  &hml LS(LA(LC(LEFT_GUI))) G    &hmr RS(RA(RC(RIGHT_GUI))) H  &hmr RIGHT_GUI J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT P  &kp SQT
 &shift_win  &kp Z             &kp X               &kp C           &kp V           &kp B                         &kp N                        &kp M            &kp COMMA        &kp DOT              &kp FSLH           &kp ENTER
                                                   &kp TAB         &lower_td       &kp SPACE                     &bkspc_del                   &raise_td        &magic_key LSHFT 0
