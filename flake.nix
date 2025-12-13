@@ -2,7 +2,8 @@
   description = "ZMK firmware build environment for Corne keyboard";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # Pin to 24.05 - nixos-unstable removed clang-tools_17 which zephyr-nix needs
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     # ZMK firmware and modules
     zephyr = {
@@ -43,9 +44,6 @@
               # Utilities
               pkgs.just
               pkgs.yq
-
-              # Keymap visualization
-              pkgs.python311Packages.keymap-drawer
             ];
 
             shellHook = ''
@@ -58,8 +56,9 @@
               echo "  just build    - Build firmware for both halves"
               echo "  just left     - Build left half only"
               echo "  just right    - Build right half only"
-              echo "  just draw     - Generate keymap visualization"
               echo "  just clean    - Clean build directory"
+              echo ""
+              echo "Optional: pip install keymap-drawer (for visualization)"
             '';
           };
         }

@@ -1,6 +1,11 @@
 # Build artifacts
 .build/
+
+# West workspace (created by `just init`)
+.west/
 zmk/
+zephyr/
+modules/
 
 # Nix
 result

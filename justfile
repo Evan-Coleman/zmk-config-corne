@@ -5,25 +5,25 @@
 default:
     @just --list
 
-# Initialize ZMK source (run once)
+# Initialize ZMK workspace (run once)
+# This repo IS the workspace - zmk/, zephyr/, modules/ are created as siblings to config/
 init:
     #!/usr/bin/env bash
     set -euo pipefail
     if [ ! -d "zmk" ]; then
-        echo "Cloning ZMK..."
-        git clone https://github.com/zmkfirmware/zmk.git
-        cd zmk
-        west init -l app
+        echo "Initializing west workspace..."
+        west init -l config
         west update
         west zephyr-export
-        echo "ZMK initialized!"
+        echo "ZMK workspace initialized!"
+        echo "Structure: zmk/, zephyr/, modules/ created alongside config/"
     else
         echo "ZMK already initialized. Run 'just update' to update."
     fi
 
 # Update ZMK and modules
 update:
-    cd zmk && west update
+    west update
 
 # Build both halves
 build: left right
@@ -33,23 +33,27 @@ build: left right
 left:
     #!/usr/bin/env bash
     set -euo pipefail
-    mkdir -p .build
-    west build -s zmk/app -d .build/left -b nice_nano_v2 -- \
+    CONFIG_DIR="$(pwd)/config"
+    BUILD_DIR="$(pwd)/.build"
+    mkdir -p "$BUILD_DIR"
+    west build -s zmk/app -d "$BUILD_DIR/left" -b nice_nano_v2 -- \
         -DSHIELD="corne_left nice_view_adapter nice_view" \
-        -DZMK_CONFIG="$(pwd)/config" \
+        -DZMK_CONFIG="$CONFIG_DIR" \
         -DSNIPPET="studio-rpc-usb-uart"
-    cp .build/left/zephyr/zmk.uf2 .build/corne_left-nice_nano_v2.uf2
+    cp "$BUILD_DIR/left/zephyr/zmk.uf2" "$BUILD_DIR/corne_left-nice_nano_v2.uf2"
     echo "Left half built: .build/corne_left-nice_nano_v2.uf2"
 
 # Build right half
 right:
     #!/usr/bin/env bash
     set -euo pipefail
-    mkdir -p .build
-    west build -s zmk/app -d .build/right -b nice_nano_v2 -- \
+    CONFIG_DIR="$(pwd)/config"
+    BUILD_DIR="$(pwd)/.build"
+    mkdir -p "$BUILD_DIR"
+    west build -s zmk/app -d "$BUILD_DIR/right" -b nice_nano_v2 -- \
         -DSHIELD="corne_right nice_view_adapter nice_view" \
-        -DZMK_CONFIG="$(pwd)/config"
-    cp .build/right/zephyr/zmk.uf2 .build/corne_right-nice_nano_v2.uf2
+        -DZMK_CONFIG="$CONFIG_DIR"
+    cp "$BUILD_DIR/right/zephyr/zmk.uf2" "$BUILD_DIR/corne_right-nice_nano_v2.uf2"
     echo "Right half built: .build/corne_right-nice_nano_v2.uf2"
 
 # Clean build directory

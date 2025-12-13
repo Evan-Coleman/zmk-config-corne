@@ -41,6 +41,7 @@ jobs:
 
       - name: Commit keymap SVG (optional)
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/mac'
+        continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
