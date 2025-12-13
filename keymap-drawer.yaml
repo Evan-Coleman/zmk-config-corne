@@ -129,6 +129,5 @@ layers:
   Main: Main
   Lower: Lower
   Raise: Raise
-  BT: BT
-  Nav: Nav
   Mouse: Mouse
+  BT: BT
