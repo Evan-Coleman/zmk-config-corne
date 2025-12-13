@@ -19,6 +19,9 @@
 // Include HRM definitions
 #include "base.keymap"
 
+// Include mouse configuration
+#include "mouse.dtsi"
+
 // Include combos
 #include "combos.dtsi"
 
@@ -148,6 +151,47 @@
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             ignored-key-positions = <31>;  // Position of Shift+Tab for reverse cycling
         };
+
+        // Smart Mouse: auto-deactivates when non-mouse key pressed
+        smart_mouse: smart_mouse {
+            compatible = "zmk,behavior-auto-layer";
+            label = "SMART_MOUSE";
+            #binding-cells = <1>;
+            // Continue on mouse movement and clicks
+            continue-list = <MOVE_UP MOVE_DOWN MOVE_LEFT MOVE_RIGHT
+                            SCRL_UP SCRL_DOWN SCRL_LEFT SCRL_RIGHT
+                            MB1 MB2 MB3>;
+            ignore-modifiers;
+        };
+
+        // Leader key: tap leader, then type sequence for action
+        leader: leader_key {
+            compatible = "zmk,behavior-leader-key";
+            label = "LEADER";
+            #binding-cells = <0>;
+
+            // Bluetooth sequences (leader → b → 0-4 or c)
+            bt0 { sequence = <B N0>; bindings = <&bt BT_SEL 0>; };
+            bt1 { sequence = <B N1>; bindings = <&bt BT_SEL 1>; };
+            bt2 { sequence = <B N2>; bindings = <&bt BT_SEL 2>; };
+            bt3 { sequence = <B N3>; bindings = <&bt BT_SEL 3>; };
+            btc { sequence = <B C>; bindings = <&bt BT_CLR>; };
+
+            // System sequences
+            reset { sequence = <R S T>; bindings = <&sys_reset>; };
+            boot { sequence = <B O T>; bindings = <&bootloader>; };
+
+            // Screenshot sequences (macOS)
+            ss_full { sequence = <S S>; bindings = <&kp LG(LS(N3))>; };      // Full screenshot
+            ss_area { sequence = <S A>; bindings = <&kp LG(LS(N4))>; };      // Area screenshot
+            ss_window { sequence = <S W>; bindings = <&kp LG(LS(N5))>; };    // Screenshot menu
+
+            // Common programming sequences
+            arrow { sequence = <MINUS GT>; bindings = <&arrow_fn>; };        // =>
+
+            // Lock screen (macOS)
+            lock { sequence = <L L>; bindings = <&kp LC(LG(Q))>; };
+        };
     };
 
     keymap {
@@ -185,7 +229,7 @@
             bindings = <
 &kp F1  &kp F2                &kp F3                  &kp F4              &kp F5                  &kp F6                                &kp F7                          &kp F8              &kp F9            &kp F10                  &kp F11           &kp F12
 &trans  &hml LEFT_SHIFT LG(X)  &hml LEFT_CONTROL LG(C)  &hml LEFT_ALT PG_UP  &hml LG(LEFT_GUI) LG(V)  &hml LC(LA(LS(LEFT_GUI))) LG(EQUAL)    &hmr RS(RA(RC(RIGHT_GUI))) LEFT  &hmr RIGHT_GUI DOWN  &hmr RIGHT_ALT UP  &hmr RIGHT_CONTROL RIGHT  &kp RIGHT_SHIFT   &back_forward
-&trans  &none                 &kp HOME                &kp PG_DN           &kp END                 &kp LG(MINUS)                         &none                           &kp C_MUTE          &kp C_VOL_DN      &kp C_VOL_UP             &kp C_PLAY_PAUSE  &none
+&trans  &smart_mouse 5        &kp HOME                &kp PG_DN           &kp END                 &kp LG(MINUS)                         &leader                         &kp C_MUTE          &kp C_VOL_DN      &kp C_VOL_UP             &kp C_PLAY_PAUSE  &none
                                                       &trans              &to 1                   &trans                                &trans                          &to 0               &trans
             >;
 
@@ -211,6 +255,20 @@
             >;
 
             label = "Nav";
+        };
+
+        Mouse {
+            // WASD-style mouse control
+            // Left hand: movement (WASD) + scroll (QE)
+            // Right hand: clicks + scroll wheel
+            bindings = <
+&none   &none         U_WH_U        U_MS_U        U_WH_D        &none            &none         U_WH_L        U_WH_D        U_WH_U        U_WH_R        &none
+&none   &kp LSHFT     U_MS_L        U_MS_D        U_MS_R        &none            &none         &mkp MB1      &mkp MB3      &mkp MB2      &kp RSHFT     &none
+&none   &kp LCTRL     &kp LALT      &kp LGUI      &none         &none            &none         &none         &kp RGUI      &kp RALT      &kp RCTRL     &none
+                                    &to 0         &to 0         &mkp MB1         &mkp MB2      &to 0         &to 0
+            >;
+
+            label = "Mouse";
         };
     };
 };
