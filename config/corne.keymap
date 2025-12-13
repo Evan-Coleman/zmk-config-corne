@@ -107,7 +107,7 @@
             bindings = <&mo 2>, <&mo 2>, <&to 2>;
         };
 
-        // Smart Shift: tap = sticky shift, double-tap = caps word
+        // Smart Shift base: tap = sticky shift, double-tap = caps word
         smart_shft: smart_shift {
             compatible = "zmk,behavior-tap-dance";
             label = "SMART_SHIFT";
@@ -116,14 +116,28 @@
             bindings = <&sk LSHFT>, <&caps_word>;
         };
 
-        // Magic Key: hold = shift, tap = smart_shft behavior
+        // Adaptive Smart Shift: after alpha = repeat, otherwise = smart_shft
+        adaptive_shft: adaptive_shift {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "ADAPTIVE_SHIFT";
+            #binding-cells = <0>;
+            bindings = <&smart_shft>;
+
+            repeat {
+                trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
+                bindings = <&key_repeat>;
+                max-prior-idle-ms = <350>;
+            };
+        };
+
+        // Magic Key: hold = shift, tap = adaptive_shft behavior
         magic_key: magic_key {
             compatible = "zmk,behavior-hold-tap";
             label = "MAGIC_KEY";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
-            bindings = <&kp>, <&smart_shft>;
+            bindings = <&kp>, <&adaptive_shft>;
         };
 
         back_forward: back_forward {
