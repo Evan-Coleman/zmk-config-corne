@@ -1,7 +1,9 @@
 /*
+ * Corne Keyboard Configuration
  * Copyright (c) 2020 The ZMK Contributors
- *
  * SPDX-License-Identifier: MIT
+ *
+ * Layers: Main(0), Lower(1), Raise(2), BT(3), Nav(4), Mouse(5)
  */
 
 #include <behaviors.dtsi>
