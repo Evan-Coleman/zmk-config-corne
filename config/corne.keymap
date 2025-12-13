@@ -254,7 +254,7 @@
             bindings = <
 &kp F1  &kp F2                &kp F3                  &kp F4              &kp F5                  &kp F6                                &kp F7                          &kp F8              &kp F9            &kp F10                  &kp F11           &kp F12
 &trans  &hml LEFT_SHIFT LG(X)  &hml LEFT_CONTROL LG(C)  &hml LEFT_ALT PG_UP  &hml LG(LEFT_GUI) LG(V)  &hml LC(LA(LS(LEFT_GUI))) LG(EQUAL)    &hmr RS(RA(RC(RIGHT_GUI))) LEFT  &hmr RIGHT_GUI DOWN  &hmr RIGHT_ALT UP  &hmr RIGHT_CONTROL RIGHT  &kp RIGHT_SHIFT   &back_forward
-&trans  &smart_mouse 3        &kp HOME                &kp PG_DN           &kp END                 &kp LG(MINUS)                         &leader                         &kp C_MUTE          &kp C_VOL_DN      &kp C_VOL_UP             &kp C_PLAY_PAUSE  &none
+&trans  &tog 3                &kp HOME                &kp PG_DN           &kp END                 &kp LG(MINUS)                         &leader                         &kp C_MUTE          &kp C_VOL_DN      &kp C_VOL_UP             &kp C_PLAY_PAUSE  &none
                                                       &trans              &to 0                   &trans                                &trans                          &to 0               &trans
             >;
 
@@ -265,10 +265,11 @@
             // WASD-style mouse control
             // Left hand: movement (WASD) + scroll (QE)
             // Right hand: clicks + scroll wheel
+            // Exit: tap Z again (tog), or any thumb except inner two
             bindings = <
 &none   &none         U_WH_U        U_MS_U        U_WH_D        &none            &none         U_WH_L        U_WH_D        U_WH_U        U_WH_R        &none
 &none   &kp LSHFT     U_MS_L        U_MS_D        U_MS_R        &none            &none         &mkp MB1      &mkp MB3      &mkp MB2      &kp RSHFT     &none
-&none   &kp LCTRL     &kp LALT      &kp LGUI      &none         &none            &none         &none         &kp RGUI      &kp RALT      &kp RCTRL     &none
+&none   &tog 3        &kp LALT      &kp LGUI      &none         &none            &none         &none         &kp RGUI      &kp RALT      &tog 3        &none
                                     &to 0         &to 0         &mkp MB1         &mkp MB2      &to 0         &to 0
             >;
 
