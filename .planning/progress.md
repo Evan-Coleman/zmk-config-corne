@@ -18,12 +18,12 @@
 - [x] Enter combo (K+L)
 - [x] Build verified passing
 
-## Phase 3: Advanced Features
+## Phase 3: Advanced Features ✓ Complete
 
-- [ ] Mouse layer with auto-toggle
-- [ ] Leader key sequences
-- [ ] Key repeat functionality (upgrade smart shift)
-- [ ] Unicode characters
+- [x] Mouse layer with auto-toggle (layer 5, access via Raise+Z)
+- [x] Leader key sequences (access via Raise+N)
+- [x] Key repeat functionality (tap magic key after alpha = repeat)
+- [ ] Unicode characters (skipped - OS-dependent complexity)
 
 ## Phase 4: Polish
 
@@ -46,8 +46,9 @@
 | **Tri-Layer** | Hold both thumbs = BT layer | Done |
 | **Swapper** | Cmd-Tab cycling (Lower: N=fwd, M=rev) | Done |
 | **Comfort Combos** | W+E=ESC, I+O=BSPC, K+L=ENTER | Done |
-| **Mouse Layer** | WASD mouse control | Pending |
-| **Leader Key** | Vim-style command sequences | Pending |
+| **Mouse Layer** | WASD control, auto-deactivate (Raise+Z) | Done |
+| **Leader Key** | BT, screenshot, lock sequences (Raise+N) | Done |
+| **Key Repeat** | Tap magic after alpha = repeat letter | Done |
 
 ---
 
@@ -81,4 +82,34 @@ Any other key = Confirm selection and release Cmd
 
 Tri-Layer:
 Hold Lower + Raise simultaneously = BT layer
+```
+
+## Phase 3 Quick Reference
+
+### Mouse Layer (Raise + Z to activate)
+```
+Left Hand:           Right Hand:
+  W=↑                  U=scroll←  I=scroll↓  O=scroll↑  P=scroll→
+A=← S=↓ D=→           J=left-click  K=middle  L=right-click
+  +modifiers           +modifiers
+
+Auto-deactivates when you press any non-mouse key!
+```
+
+### Leader Key Sequences (Raise + N to start)
+```
+Bluetooth:          Screenshots (macOS):    System:
+b → 0 = BT slot 0   s → s = Full screen     r → s → t = Reset
+b → 1 = BT slot 1   s → a = Area select     b → o → t = Bootloader
+b → 2 = BT slot 2   s → w = Screenshot menu l → l = Lock screen
+b → 3 = BT slot 3
+b → c = Clear BT
+```
+
+### Magic Key (Right Thumb)
+```
+After typing a letter:  tap = repeat that letter
+Otherwise:              tap = sticky shift
+                        double-tap = caps word
+                        hold = shift
 ```
