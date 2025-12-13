@@ -252,7 +252,7 @@
         // ========== EXISTING COMBO (preserved) ==========
 
         bt_combo {
-            bindings = <&to 3>;
+            bindings = <&to 4>;
             key-positions = <0 1 10 11>;
         };
     };
