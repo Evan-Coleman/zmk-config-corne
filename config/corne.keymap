@@ -11,7 +11,7 @@
 
 // zmk-helpers (must come before using ZMK_* macros)
 #include "zmk-helpers/helper.h"
-#include "zmk-helpers/key-labels/36.h"
+#include "zmk-helpers/key-labels/42.h"
 
 // Timing constants
 #define QUICK_TAP_MS 175
