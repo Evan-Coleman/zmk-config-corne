@@ -1,12 +1,13 @@
 # ZMK Config Enhancement Progress
 
-## Phase 1: Foundation (Current Sprint)
+## Phase 1: Foundation ✓ Complete
 
-- [x] Fix build errors (helper.h include, QUICK_TAP_MS)
+- [x] Fix build errors (helper.h, QUICK_TAP_MS, 42.h key-labels)
 - [x] Layer switching: triple-tap for sticky, otherwise hold
 - [x] Replace right thumb ALT with Smart Shift
 - [x] Add coding symbol combos (prioritized for Swift/JS/Java)
 - [x] Add Caps Word combo (F+J) + configure continue-list
+- [x] Build verified passing (GitHub Actions)
 
 ## Phase 2: Comfort Features
 
@@ -36,7 +37,7 @@
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| **Build Fix** | Include helper.h, define QUICK_TAP_MS | Done |
+| **Build Fix** | helper.h, QUICK_TAP_MS, 42.h key-labels for 6-col | Done |
 | **Layer Hold** | Hold=momentary, triple-tap=toggle | Done |
 | **Smart Shift** | Tap=sticky shift, hold=shift, double-tap=caps word | Done |
 | **Symbol Combos** | @#$%^&* + brackets + operators for iOS/JS/Java | Done |
