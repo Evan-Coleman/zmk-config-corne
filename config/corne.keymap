@@ -31,6 +31,15 @@
 };
 
 / {
+    // Tri-layer: Lower (1) + Raise (2) = BT layer (3)
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+
     behaviors {
         bkspc_del: bkspc_del {
             compatible = "zmk,behavior-mod-morph";
@@ -129,6 +138,16 @@
             #binding-cells = <0>;
             bindings = <&kp CAPS>, <&kp PRINTSCREEN>;
         };
+
+        // Cmd-Tab swapper: tap to cycle windows, other keys release Cmd
+        // For macOS: uses LGUI (Cmd) instead of LALT
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <31>;  // Position of Shift+Tab for reverse cycling
+        };
     };
 
     keymap {
@@ -155,7 +174,7 @@
             bindings = <
 &none  &kp NUMBER_1          &kp NUMBER_2            &kp NUMBER_3               &kp NUMBER_4                &kp NUMBER_5                          &kp NUMBER_6                     &kp NUMBER_7        &kp NUMBER_8              &kp NUMBER_9                   &kp NUMBER_0          &none
 &none  &hml LEFT_SHIFT MINUS  &hml LEFT_CONTROL EQUAL  &hml LEFT_ALT LEFT_BRACKET  &hml LEFT_GUI RIGHT_BRACKET  &hml LS(LA(LC(LEFT_GUI))) BACKSLASH    &hmr RS(RA(RC(RIGHT_GUI))) UNDER  &hmr RIGHT_GUI PLUS  &hmr RIGHT_ALT LEFT_BRACE  &hmr RIGHT_CONTROL RIGHT_BRACE  &hmr RIGHT_SHIFT PIPE  &none
-&none  &kp LC(LEFT_ARROW)    &kp LC(LS(TAB))         &kp LG(Z)                  &kp LC(TAB)                 &kp LC(RIGHT_ARROW)                   &none                            &none               &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS          &none                 &none
+&none  &kp LC(LEFT_ARROW)    &kp LC(LS(TAB))         &kp LG(Z)                  &kp LC(TAB)                 &kp LC(RIGHT_ARROW)                   &swapper                         &kp LS(TAB)         &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS          &none                 &none
                                                      &none                      &to 0                       &trans                                &trans                           &to 2               &none
             >;
 

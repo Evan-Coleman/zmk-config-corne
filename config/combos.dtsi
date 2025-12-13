@@ -223,7 +223,33 @@
             layers = <0>;
         };
 
-        // ========== YOUR EXISTING COMBO (preserved) ==========
+        // ========== COMFORT COMBOS (Phase 2) ==========
+
+        combo_esc {
+            timeout-ms = <COMBO_TERM_FAST>;
+            require-prior-idle-ms = <COMBO_IDLE_FAST>;
+            key-positions = <2 3>;   // W + E
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+
+        combo_bspc {
+            timeout-ms = <COMBO_TERM_FAST>;
+            require-prior-idle-ms = <COMBO_IDLE_FAST>;
+            key-positions = <8 9>;   // I + O
+            bindings = <&kp BSPC>;
+            layers = <0>;
+        };
+
+        combo_enter {
+            timeout-ms = <COMBO_TERM_FAST>;
+            require-prior-idle-ms = <COMBO_IDLE_FAST>;
+            key-positions = <20 21>; // K + L
+            bindings = <&kp ENTER>;
+            layers = <0>;
+        };
+
+        // ========== EXISTING COMBO (preserved) ==========
 
         bt_combo {
             bindings = <&to 3>;
