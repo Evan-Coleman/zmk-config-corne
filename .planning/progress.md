@@ -2,11 +2,11 @@
 
 ## Phase 1: Foundation (Current Sprint)
 
-- [ ] Fix build errors (helper.h include, QUICK_TAP_MS)
-- [ ] Layer switching: triple-tap for sticky, otherwise hold
-- [ ] Replace right thumb ALT with Smart Shift
-- [ ] Add coding symbol combos (prioritized for Swift/JS/Java)
-- [ ] Add Caps Word combo (F+J) + configure continue-list
+- [x] Fix build errors (helper.h include, QUICK_TAP_MS)
+- [x] Layer switching: triple-tap for sticky, otherwise hold
+- [x] Replace right thumb ALT with Smart Shift
+- [x] Add coding symbol combos (prioritized for Swift/JS/Java)
+- [x] Add Caps Word combo (F+J) + configure continue-list
 
 ## Phase 2: Comfort Features
 
@@ -36,11 +36,11 @@
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| **Build Fix** | Include helper.h, define QUICK_TAP_MS | Pending |
-| **Layer Hold** | Hold=momentary, triple-tap=toggle | Pending |
-| **Smart Shift** | Tap=sticky shift, hold=shift, double-tap=caps word | Pending |
-| **Symbol Combos** | @#$%^&* + brackets + operators for iOS/JS/Java | Pending |
-| **Caps Word** | F+J combo, continues on underscore/minus | Pending |
+| **Build Fix** | Include helper.h, define QUICK_TAP_MS | Done |
+| **Layer Hold** | Hold=momentary, triple-tap=toggle | Done |
+| **Smart Shift** | Tap=sticky shift, hold=shift, double-tap=caps word | Done |
+| **Symbol Combos** | @#$%^&* + brackets + operators for iOS/JS/Java | Done |
+| **Caps Word** | F+J combo, continues on underscore/minus | Done |
 | **Tri-Layer** | Hold both thumbs = BT layer | Pending |
 | **Swapper** | Single key Alt-Tab cycling | Pending |
 | **Mouse Layer** | WASD mouse control | Pending |

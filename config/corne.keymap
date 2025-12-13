@@ -8,8 +8,19 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+
+// zmk-helpers (must come before using ZMK_* macros)
+#include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/36.h"
+
+// Timing constants
+#define QUICK_TAP_MS 175
+
+// Include HRM definitions
 #include "base.keymap"
+
+// Include combos
+#include "combos.dtsi"
 
 &mt {
     flavor = "balanced";
@@ -20,15 +31,6 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        bt_combo {
-            bindings = <&to 3>;
-            key-positions = <0 1 10 11>;
-        };
-    };
-
     behaviors {
         bkspc_del: bkspc_del {
             compatible = "zmk,behavior-mod-morph";
@@ -76,13 +78,40 @@
             bindings = <&to 2>, <&to 0>;
         };
 
-        mom_or_to: mom_or_to {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MOM_OR_TO";
-            bindings = <&mo>, <&to>;
-
-            #binding-cells = <2>;
+        // Layer tap-dance: hold = momentary, triple-tap = toggle (sticky)
+        lower_td: lower_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LOWER_TD";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
+            bindings = <&mo 1>, <&mo 1>, <&to 1>;
+        };
+
+        raise_td: raise_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RAISE_TD";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 2>, <&mo 2>, <&to 2>;
+        };
+
+        // Smart Shift: tap = sticky shift, double-tap = caps word
+        smart_shft: smart_shift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SMART_SHIFT";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LSHFT>, <&caps_word>;
+        };
+
+        // Magic Key: hold = shift, tap = smart_shft behavior
+        magic_key: magic_key {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MAGIC_KEY";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&smart_shft>;
         };
 
         back_forward: back_forward {
@@ -116,7 +145,7 @@
 &kp GRAVE   &kp Q             &kp W               &kp E           &kp R           &kp T                         &kp Y                        &kp U            &kp I            &kp O                &kp SEMI           &caps_ptsc
 &kp ESC     &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_GUI F  &hml LS(LA(LC(LEFT_GUI))) G    &hmr RS(RA(RC(RIGHT_GUI))) H  &hmr RIGHT_GUI J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT P  &kp SQT
 &shift_win  &kp Z             &kp X               &kp C           &kp V           &kp B                         &kp N                        &kp M            &kp COMMA        &kp DOT              &kp FSLH           &kp ENTER
-                                                  &kp TAB         &mom_or_to 1 1  &kp SPACE                     &bkspc_del                   &mom_or_to 2 2   &kp RIGHT_ALT
+                                                  &kp TAB         &lower_td       &kp SPACE                     &bkspc_del                   &raise_td        &magic_key LSHFT 0
             >;
 
             label = "Main";
