@@ -262,13 +262,14 @@
         };
 
         Mouse {
-            // WASD-style mouse control
-            // Left hand: movement (WASD) + scroll (QE)
-            // Right hand: clicks + scroll wheel
-            // Exit: tap Z again (tog), or any thumb except inner two
+            // Left hand (ESDF): FAST movement for large sweeps
+            // Right hand (IJKL): SLOW precision movement for fine control
+            // Scroll: Q/R on left, U/O on right
+            // Clicks: thumb cluster only (inner thumbs)
+            // Exit: Z or / (toggle), or outer thumbs
             bindings = <
-&none   &none         U_WH_U        U_MS_U        U_WH_D        &none            &none         U_WH_L        U_WH_D        U_WH_U        U_WH_R        &none
-&none   &kp LSHFT     U_MS_L        U_MS_D        U_MS_R        &none            &none         &mkp MB1      &mkp MB3      &mkp MB2      &kp RSHFT     &none
+&none   &none         U_WH_U        U_MS_U_FAST   U_WH_D        &none            &none         U_WH_L        U_MS_U_SLOW   U_WH_R        &none         &none
+&none   &kp LSHFT     U_MS_L_FAST   U_MS_D_FAST   U_MS_R_FAST   &none            &none         U_MS_L_SLOW   U_MS_D_SLOW   U_MS_R_SLOW   &kp RSHFT     &none
 &none   &tog 3        &kp LALT      &kp LGUI      &none         &none            &none         &none         &kp RGUI      &kp RALT      &tog 3        &none
                                     &to 0         &to 0         &mkp MB1         &mkp MB2      &to 0         &to 0
             >;
