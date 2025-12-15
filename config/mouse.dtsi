@@ -17,15 +17,15 @@
 
 / {
     behaviors {
-        // Fast mouse - quick acceleration for large movements
+        // Fast mouse - 2x speed, quick acceleration for large movements
         mmv_f: mmv_fast {
             compatible = "zmk,behavior-input-two-axis";
             label = "MMV_FAST";
             #binding-cells = <1>;
             x-input-code = <INPUT_REL_X>;
             y-input-code = <INPUT_REL_Y>;
-            time-to-max-speed-ms = <200>;
-            acceleration-exponent = <1>;
+            time-to-max-speed-ms = <100>;
+            acceleration-exponent = <2>;
         };
 
         // Slow mouse - no acceleration for precision
