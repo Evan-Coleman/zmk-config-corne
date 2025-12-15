@@ -3,7 +3,7 @@
  * Fast (left hand) vs Slow/Precision (right hand)
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <dt-bindings/zmk/pointing.h>
@@ -15,9 +15,16 @@
     delay-ms = <0>;
 };
 
+// Fast movement values (2400 = 4x base speed)
+// Format: (value << 16) | axis where axis: 0=horiz, 1=vert
+#define MOVE_F_UP    0x09600001
+#define MOVE_F_DOWN  0xF6A00001
+#define MOVE_F_LEFT  0xF6A00000
+#define MOVE_F_RIGHT 0x09600000
+
 / {
     behaviors {
-        // Fast mouse - 2x speed, quick acceleration for large movements
+        // Fast mouse - 4x velocity, quick acceleration
         mmv_f: mmv_fast {
             compatible = "zmk,behavior-input-two-axis";
             label = "MMV_FAST";
@@ -28,7 +35,7 @@
             acceleration-exponent = <2>;
         };
 
-        // Slow mouse - no acceleration for precision
+        // Slow mouse - base velocity, no acceleration for precision
         mmv_s: mmv_slow {
             compatible = "zmk,behavior-input-two-axis";
             label = "MMV_SLOW";
