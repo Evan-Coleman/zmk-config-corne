@@ -447,8 +447,6 @@ path.combo {
 </g>
 <g class="combo combopos-31">
 <path d="M420,49 l-373,0" class="combo"/>
-<path d="M420,49 l-317,0" class="combo"/>
-<path d="M420,49 l317,0" class="combo"/>
 <path d="M420,49 l373,0" class="combo"/>
 <rect rx="6" ry="6" x="406" y="36" width="28" height="26" class="combo"/>
 <a href="#BT">
@@ -878,7 +876,7 @@ path.combo {
 <g transform="translate(196, 28)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 78%">&amp;mmv_fast</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">MOVE_UP</tspan>
+<tspan x="0" dy="-1.2em" style="font-size: 78%">&amp;mmv_fast</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">(1800</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">…</tspan>
 </text>
 </g>
 <g transform="translate(252, 35)" class="key keypos-4">
@@ -927,19 +925,19 @@ path.combo {
 <g transform="translate(140, 91)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 78%">&amp;mmv_fast</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">MOVE_LEFT</tspan>
+<tspan x="0" dy="-1.2em" style="font-size: 78%">&amp;mmv_fast</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">(1800</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">…</tspan>
 </text>
 </g>
 <g transform="translate(196, 84)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 78%">&amp;mmv_fast</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">MOVE_DOWN</tspan>
+<tspan x="0" dy="-1.2em" style="font-size: 78%">&amp;mmv_fast</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">(1800</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">…</tspan>
 </text>
 </g>
 <g transform="translate(252, 91)" class="key keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 70%">&amp;mmv_fast</tspan><tspan x="0" dy="1.2em" style="font-size: 70%">MOVE_RIGHT</tspan>
+<tspan x="0" dy="-1.2em" style="font-size: 78%">&amp;mmv_fast</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">(1800</tspan><tspan x="0" dy="1.2em" style="font-size: 78%">…</tspan>
 </text>
 </g>
 <g transform="translate(308, 98)" class="key keypos-17">
