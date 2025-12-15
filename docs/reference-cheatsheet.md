@@ -80,8 +80,9 @@ MOUSE Home PgDn End ⌘- | LEADER 🔇 🔉 🔊 ⏯  <- nav + media
 
 ## MOUSE LAYER (toggle with Raise+Z)
 ```
-Left hand (ESDF) = mouse movement + scroll (W/R)
-Right hand (IJKL) = mirrored movement + scroll (U/O)
+Left hand (ESDF) = FAST mouse movement (large sweeps)
+Right hand (IJKL) = SLOW precision movement (fine control)
+Scroll = W/R (left) and U/O (right)
 Clicks = inner thumbs (L/R)
 Modifiers = Shift, Alt, Gui available
 Exit = Z or / or outer thumbs

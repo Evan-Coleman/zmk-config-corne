@@ -1,15 +1,14 @@
 /*
  * Mouse Layer Configuration
- * Mirrored layout: ESDF on left, IJKL on right
- * Scroll wheels for precision positioning
+ * Two speed modes: Fast (left hand) and Slow/Precision (right hand)
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <dt-bindings/zmk/pointing.h>
 
-// Mouse movement settings - balanced for general use
+// Default mmv settings (fallback)
 &mmv {
     acceleration-exponent = <1>;
     time-to-max-speed-ms = <400>;
@@ -23,11 +22,44 @@
     delay-ms = <0>;
 };
 
-// Movement macros
-#define U_MS_U &mmv MOVE_UP
-#define U_MS_D &mmv MOVE_DOWN
-#define U_MS_L &mmv MOVE_LEFT
-#define U_MS_R &mmv MOVE_RIGHT
+// Custom mouse movement behaviors
+/ {
+    behaviors {
+        // Fast movement (left hand - large sweeping movements)
+        mmv_fast: mouse_move_fast {
+            compatible = "zmk,behavior-input-two-axis";
+            label = "MOUSE_MOVE_FAST";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <300>;
+            acceleration-exponent = <1>;
+        };
+
+        // Slow/precision movement (right hand - fine control)
+        mmv_slow: mouse_move_slow {
+            compatible = "zmk,behavior-input-two-axis";
+            label = "MOUSE_MOVE_SLOW";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <800>;
+            acceleration-exponent = <0>;
+        };
+    };
+};
+
+// Fast movement macros (left hand)
+#define U_MS_U_FAST &mmv_fast MOVE_UP
+#define U_MS_D_FAST &mmv_fast MOVE_DOWN
+#define U_MS_L_FAST &mmv_fast MOVE_LEFT
+#define U_MS_R_FAST &mmv_fast MOVE_RIGHT
+
+// Slow/precision movement macros (right hand)
+#define U_MS_U_SLOW &mmv_slow MOVE_UP
+#define U_MS_D_SLOW &mmv_slow MOVE_DOWN
+#define U_MS_L_SLOW &mmv_slow MOVE_LEFT
+#define U_MS_R_SLOW &mmv_slow MOVE_RIGHT
 
 // Scroll macros
 #define U_WH_U &msc SCRL_UP
