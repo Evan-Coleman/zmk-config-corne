@@ -10,21 +10,27 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 // zmk-helpers (must come before using ZMK_* macros)
+
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/42.h"
 
 // Timing constants
+
 #define QUICK_TAP_MS 175
 
 // Include HRM definitions
+
 #include "base.keymap"
 
 // Include mouse configuration
+
 #include "mouse.dtsi"
 
 // Include combos
+
 #include "combos.dtsi"
 
 &mt {
@@ -37,8 +43,10 @@
 
 / {
     // Tri-layer: Lower (1) + Raise (2) = BT layer (4)
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
             if-layers = <1 2>;
             then-layer = <4>;
@@ -93,6 +101,7 @@
         };
 
         // Layer tap-dance: hold = momentary, triple-tap = toggle (sticky)
+
         lower_td: lower_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "LOWER_TD";
@@ -110,6 +119,7 @@
         };
 
         // Smart Shift base: tap = sticky shift, double-tap = caps word
+
         smart_shft: smart_shift {
             compatible = "zmk,behavior-tap-dance";
             label = "SMART_SHIFT";
@@ -119,6 +129,7 @@
         };
 
         // Adaptive Smart Shift: after alpha = repeat, otherwise = smart_shft
+
         adaptive_shft: adaptive_shift {
             compatible = "zmk,behavior-adaptive-key";
             label = "ADAPTIVE_SHIFT";
@@ -133,6 +144,7 @@
         };
 
         // Magic Key: hold = shift, tap = adaptive_shft behavior
+
         magic_key: magic_key {
             compatible = "zmk,behavior-hold-tap";
             label = "MAGIC_KEY";
@@ -159,6 +171,7 @@
         };
 
         // Semicolon tap-dance: tap = ;, double-tap = :
+
         semi_colon: semi_colon {
             compatible = "zmk,behavior-tap-dance";
             label = "SEMI_COLON";
@@ -169,53 +182,115 @@
 
         // Cmd-Tab swapper: tap to cycle windows, other keys release Cmd
         // For macOS: uses LGUI (Cmd) instead of LALT
+
         swapper: swapper {
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+
             ignored-key-positions = <31>;  // Position of Shift+Tab for reverse cycling
         };
 
         // Smart Mouse: auto-deactivates when non-mouse key pressed
+
         smart_mouse: smart_mouse {
             compatible = "zmk,behavior-auto-layer";
             label = "SMART_MOUSE";
             #binding-cells = <1>;
+
             // Continue on mouse movement and clicks
-            continue-list = <MOVE_UP MOVE_DOWN MOVE_LEFT MOVE_RIGHT
+
+            continue-list = <
+MOVE_UP MOVE_DOWN MOVE_LEFT MOVE_RIGHT
                             SCRL_UP SCRL_DOWN SCRL_LEFT SCRL_RIGHT
-                            MB1 MB2 MB3>;
+                            MB1 MB2 MB
+            >;
+
             ignore-modifiers;
         };
 
         // Leader key: tap leader, then type sequence for action
+
         leader: leader_key {
             compatible = "zmk,behavior-leader-key";
             label = "LEADER";
             #binding-cells = <0>;
 
             // Bluetooth sequences (leader → b → 0-4 or c)
-            bt0 { sequence = <B N0>; bindings = <&bt BT_SEL 0>; };
-            bt1 { sequence = <B N1>; bindings = <&bt BT_SEL 1>; };
-            bt2 { sequence = <B N2>; bindings = <&bt BT_SEL 2>; };
-            bt3 { sequence = <B N3>; bindings = <&bt BT_SEL 3>; };
-            btc { sequence = <B C>; bindings = <&bt BT_CLR>; };
+
+            bt0 {
+                sequence = <B N0>;
+                bindings = <&bt BT_SEL 0>;
+            };
+
+            bt1 {
+                sequence = <B N1>;
+                bindings = <&bt BT_SEL 1>;
+            };
+
+            bt2 {
+                sequence = <B N2>;
+                bindings = <&bt BT_SEL 2>;
+            };
+
+            bt3 {
+                sequence = <B N3>;
+                bindings = <&bt BT_SEL 3>;
+            };
+
+            btc {
+                sequence = <B C>;
+                bindings = <&bt BT_CLR>;
+            };
 
             // System sequences
-            reset { sequence = <R S T>; bindings = <&sys_reset>; };
-            boot { sequence = <B O T>; bindings = <&bootloader>; };
+
+            reset {
+                sequence = <R S T>;
+                bindings = <&sys_reset>;
+            };
+
+            boot {
+                sequence = <B O T>;
+                bindings = <&bootloader>;
+            };
 
             // Screenshot sequences (macOS)
-            ss_full { sequence = <S S>; bindings = <&kp LG(LS(N3))>; };      // Full screenshot
-            ss_area { sequence = <S A>; bindings = <&kp LG(LS(N4))>; };      // Area screenshot
-            ss_window { sequence = <S W>; bindings = <&kp LG(LS(N5))>; };    // Screenshot menu
 
+            ss_full {
+                sequence = <S S>;
+                bindings = <&kp LG(LS(N3))>;
+            };      // Full screenshot
+            ss_area {
+                sequence = <S A>;
+                bindings = <&kp LG(LS(N4))>;
+            };      // Area screenshot
+            ss_window {
+                sequence = <S W>;
+                bindings = <&kp LG(LS(N5))>;
+            };    // Screenshot menu
             // Common programming sequences
-            arrow { sequence = <MINUS GT>; bindings = <&arrow_fn>; };        // =>
 
+            arrow {
+                sequence = <MINUS GT>;
+                bindings = <&arrow_fn>;
+            };        // =>
             // Lock screen (macOS)
-            lock { sequence = <L L>; bindings = <&kp LC(LG(Q))>; };
+
+            lock {
+                sequence = <L L>;
+                bindings = <&kp LC(LG(Q))>;
+            };
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        tobt {
+            bindings = <&to 4>;
+            key-positions = <0 1 10 11>;
         };
     };
 
@@ -230,10 +305,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp GRAVE   &kp Q             &kp W               &kp E           &kp R           &kp T                         &kp Y                        &kp U            &kp I            &kp O                &semi_colon        &caps_ptsc
-&kp ESC     &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_GUI F  &hml LS(LA(LC(LEFT_GUI))) G    &hmr RS(RA(RC(RIGHT_GUI))) H  &hmr RIGHT_GUI J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT P  &kp SQT
-&shift_win  &kp Z             &kp X               &kp C           &kp V           &kp B                         &kp N                        &kp M            &kp COMMA        &kp DOT              &kp FSLH           &kp ENTER
-                                                  &kp TAB         &lower_td       &kp SPACE                     &bkspc_del                   &raise_td        &magic_key LSHFT 0
+&kp GRAVE   &kp Q              &kp W                &kp E            &kp R            &kp T                          &kp Y                         &kp U             &kp I               &kp O                 &semi_colon         &caps_ptsc
+&kp ESC     &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_GUI F  &hml LS(LA(LC(LEFT_GUI))) G    &hmr RS(RA(RC(RIGHT_GUI))) H  &hmr RIGHT_GUI J  &hmr RIGHT_ALT K    &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT P  &kp SQT
+&shift_win  &kp Z              &kp X                &kp C            &kp V            &kp B                          &kp N                         &kp M             &kp COMMA           &kp DOT               &kp FSLH            &kp ENTER
+                                                    &kp TAB          &lower_td        &kp SPACE                      &bkspc_del                    &raise_td         &magic_key LSHFT 0
             >;
 
             label = "Main";
@@ -241,10 +316,10 @@
 
         Lower {
             bindings = <
-&none  &kp NUMBER_1          &kp NUMBER_2            &kp NUMBER_3               &kp NUMBER_4                &kp NUMBER_5                          &kp NUMBER_6                     &kp NUMBER_7        &kp NUMBER_8              &kp NUMBER_9                   &kp NUMBER_0          &none
+&none  &kp NUMBER_1           &kp NUMBER_2             &kp NUMBER_3                &kp NUMBER_4                 &kp NUMBER_5                           &kp NUMBER_6                      &kp NUMBER_7         &kp NUMBER_8               &kp NUMBER_9                    &kp NUMBER_0           &none
 &none  &hml LEFT_SHIFT MINUS  &hml LEFT_CONTROL EQUAL  &hml LEFT_ALT LEFT_BRACKET  &hml LEFT_GUI RIGHT_BRACKET  &hml LS(LA(LC(LEFT_GUI))) BACKSLASH    &hmr RS(RA(RC(RIGHT_GUI))) UNDER  &hmr RIGHT_GUI PLUS  &hmr RIGHT_ALT LEFT_BRACE  &hmr RIGHT_CONTROL RIGHT_BRACE  &hmr RIGHT_SHIFT PIPE  &none
-&none  &kp LC(LEFT_ARROW)    &kp LC(LS(TAB))         &kp LG(Z)                  &kp LC(TAB)                 &kp LC(RIGHT_ARROW)                   &swapper                         &kp LS(TAB)         &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS          &none                 &none
-                                                     &trans                     &to 0                       &trans                                &trans                           &to 0               &trans
+&none  &kp LC(LEFT_ARROW)     &kp LC(LS(TAB))          &kp LG(Z)                   &kp LC(TAB)                  &kp LC(RIGHT_ARROW)                    &swapper                          &kp LS(TAB)          &kp LEFT_PARENTHESIS       &kp RIGHT_PARENTHESIS           &none                  &none
+                                                       &trans                      &to 0                        &trans                                 &trans                            &to 0                &trans
             >;
 
             label = "Lower";
@@ -252,10 +327,10 @@
 
         Raise {
             bindings = <
-&kp F1  &kp F2                &kp F3                  &kp F4              &kp F5                  &kp F6                                &kp F7                          &kp F8              &kp F9            &kp F10                  &kp F11           &kp F12
+&kp F1  &kp F2                 &kp F3                   &kp F4               &kp F5                   &kp F6                                 &kp F7                           &kp F8               &kp F9             &kp F10                   &kp F11           &kp F12
 &trans  &hml LEFT_SHIFT LG(X)  &hml LEFT_CONTROL LG(C)  &hml LEFT_ALT PG_UP  &hml LG(LEFT_GUI) LG(V)  &hml LC(LA(LS(LEFT_GUI))) LG(EQUAL)    &hmr RS(RA(RC(RIGHT_GUI))) LEFT  &hmr RIGHT_GUI DOWN  &hmr RIGHT_ALT UP  &hmr RIGHT_CONTROL RIGHT  &kp RIGHT_SHIFT   &back_forward
-&trans  &tog 3                &kp HOME                &kp PG_DN           &kp END                 &kp LG(MINUS)                         &leader                         &kp C_MUTE          &kp C_VOL_DN      &kp C_VOL_UP             &kp C_PLAY_PAUSE  &none
-                                                      &trans              &to 0                   &trans                                &trans                          &to 0               &trans
+&trans  &tog 3                 &kp HOME                 &kp PG_DN            &kp END                  &kp LG(MINUS)                          &leader                          &kp C_MUTE           &kp C_VOL_DN       &kp C_VOL_UP              &kp C_PLAY_PAUSE  &none
+                                                        &trans               &to 0                    &trans                                 &trans                           &to 0                &trans
             >;
 
             label = "Raise";
@@ -266,11 +341,12 @@
             // Scroll: W/R on left, U/O on right
             // Clicks: inner thumb buttons
             // Exit: Z or / (toggle), or outer thumbs
+
             bindings = <
-&none   &none         U_WH_U        &mmv MOVE_UP    U_WH_D        &none            &none         U_WH_L        &mmv MOVE_UP    U_WH_R        &none         &none
-&none   &kp LSHFT     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none          &none         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RSHFT   &none
-&none   &tog 3        &kp LALT      &kp LGUI      &none         &none            &none         &none         &kp RGUI      &kp RALT      &tog 3        &none
-                                    &to 0         &to 0         &mkp MB1         &mkp MB2      &to 0         &to 0
+&none            &none U_WH_U  &mmv MOVE_UP U_WH_D  &none           &none U_WH_L    &mmv MOVE_UP U_WH_R    &none      &none  &none  &kp LSHFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN
+&mmv MOVE_RIGHT  &none         &none                &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT        &kp RSHFT  &none  &none  &tog 3     &kp LALT        &kp LGUI
+&none            &none         &none                &none           &kp RGUI        &kp RALT               &tog 3     &none  &to 0  &to 0      &mkp MB1        &mkp MB2
+                                                    &to 0           &to 0
             >;
 
             label = "Mouse";
@@ -279,11 +355,12 @@
         BT {
             // Bluetooth profile selection and numpad
             // Access via tri-layer: hold Lower + Raise
+
             bindings = <
-&none       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt_clear    &kp N7  &kp N8  &kp N9  &kp KP_MINUS     &kp KP_MULTIPLY  &bkspc_del
-&none       &none         &none         &none         &none         &none        &kp N4  &kp N5  &kp N6  &kp KP_PLUS      &none            &none
-&none       &none         &none         &bl BL_OFF    &none         &none        &kp N1  &kp N2  &kp N3  &kp KP_DIVIDE    &none            &none
-                                        &trans        &to 0         &trans       &trans  &to 0   &trans
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt_clear    &kp N7  &kp N8  &kp N9  &kp KP_MINUS   &kp KP_MULTIPLY  &bkspc_del
+&none  &none         &none         &none         &none         &none        &kp N4  &kp N5  &kp N6  &kp KP_PLUS    &none            &none
+&none  &none         &none         &bl BL_OFF    &none         &none        &kp N1  &kp N2  &kp N3  &kp KP_DIVIDE  &none            &none
+                                   &trans        &to 0         &trans       &trans  &to 0   &trans
             >;
 
             label = "BT";
