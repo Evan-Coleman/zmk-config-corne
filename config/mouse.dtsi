@@ -1,48 +1,35 @@
 /*
  * Mouse Layer Configuration
- * Settings tuned for 3840 x 2160 display resolution
- *
- * Layer 5 = Mouse layer
+ * Mirrored layout: ESDF on left, IJKL on right
+ * Scroll wheels for precision positioning
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <dt-bindings/zmk/pointing.h>
 
-// Mouse movement settings
+// Mouse movement settings - balanced for general use
 &mmv {
     acceleration-exponent = <1>;
-    time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <400>;
     delay-ms = <0>;
 };
 
-// Scroll settings
+// Scroll settings - linear for precision
 &msc {
     acceleration-exponent = <0>;
     time-to-max-speed-ms = <300>;
     delay-ms = <0>;
 };
 
-// Shorthand macros for mouse keys (default speed)
+// Movement macros
 #define U_MS_U &mmv MOVE_UP
 #define U_MS_D &mmv MOVE_DOWN
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
 
-// Fast movement (left hand - large movements)
-#define U_MS_U_FAST &mmv MOVE_UP(1600)
-#define U_MS_D_FAST &mmv MOVE_DOWN(1600)
-#define U_MS_L_FAST &mmv MOVE_LEFT(1600)
-#define U_MS_R_FAST &mmv MOVE_RIGHT(1600)
-
-// Slow/precision movement (right hand - fine control)
-#define U_MS_U_SLOW &mmv MOVE_UP(250)
-#define U_MS_D_SLOW &mmv MOVE_DOWN(250)
-#define U_MS_L_SLOW &mmv MOVE_LEFT(250)
-#define U_MS_R_SLOW &mmv MOVE_RIGHT(250)
-
-// Scroll
+// Scroll macros
 #define U_WH_U &msc SCRL_UP
 #define U_WH_D &msc SCRL_DOWN
 #define U_WH_L &msc SCRL_LEFT

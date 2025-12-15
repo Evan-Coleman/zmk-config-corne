@@ -78,9 +78,11 @@ F1-F6      |  F7-F12        <- function keys
 MOUSE Home PgDn End ⌘- | LEADER 🔇 🔉 🔊 ⏯  <- nav + media
 ```
 
-## MOUSE LAYER (auto-exit on any other key)
+## MOUSE LAYER (toggle with Raise+Z)
 ```
-Left hand = WASD movement + scroll
-Right hand = click buttons (L/M/R)
-Modifiers available for Cmd+click etc.
+Left hand (ESDF) = mouse movement + scroll (W/R)
+Right hand (IJKL) = mirrored movement + scroll (U/O)
+Clicks = inner thumbs (L/R)
+Modifiers = Shift, Alt, Gui available
+Exit = Z or / or outer thumbs
 ```
