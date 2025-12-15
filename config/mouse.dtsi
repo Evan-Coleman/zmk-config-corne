@@ -60,11 +60,13 @@
     };
 };
 
-// Custom fast movement values (3x default speed = 1800)
-#define MOVE_UP_FAST    (1800 << 16 | 0x0000)
-#define MOVE_DOWN_FAST  (1800 << 16 | 0x0001)
-#define MOVE_LEFT_FAST  (1800 << 16 | 0x0002)
-#define MOVE_RIGHT_FAST (1800 << 16 | 0x0003)
+// Fast movement values using ZMK's encoding (3x speed = 1800)
+// Format: (value << 16 | axis) where axis: 0=horizontal, 1=vertical
+// Positive = right/up, negative = left/down
+#define MOVE_UP_FAST    ((1800) << 16 | 0x0001)
+#define MOVE_DOWN_FAST  ((-1800 & 0xFFFF) << 16 | 0x0001)
+#define MOVE_LEFT_FAST  ((-1800 & 0xFFFF) << 16 | 0x0000)
+#define MOVE_RIGHT_FAST ((1800) << 16 | 0x0000)
 
 // Fast movement macros (left hand) - 3x speed
 #define U_MS_U_FAST &mmv_fast MOVE_UP_FAST
@@ -78,8 +80,8 @@
 #define U_MS_L_SLOW &mmv_slow MOVE_LEFT
 #define U_MS_R_SLOW &mmv_slow MOVE_RIGHT
 
-// Scroll macros
-#define U_WH_U &msc SCRL_UP
-#define U_WH_D &msc SCRL_DOWN
-#define U_WH_L &msc SCRL_LEFT
-#define U_WH_R &msc SCRL_RIGHT
+// Scroll macros (vim-style: j=down, k=up)
+#define U_WH_U &msc SCRL_DOWN
+#define U_WH_D &msc SCRL_UP
+#define U_WH_L &msc SCRL_RIGHT
+#define U_WH_R &msc SCRL_LEFT
