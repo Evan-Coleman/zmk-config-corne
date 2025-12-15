@@ -80,8 +80,8 @@
 #define U_MS_L_SLOW &mmv_slow MOVE_LEFT
 #define U_MS_R_SLOW &mmv_slow MOVE_RIGHT
 
-// Scroll macros (vim-style: j=down, k=up)
+// Scroll macros (vim-style up/down only)
 #define U_WH_U &msc SCRL_DOWN
 #define U_WH_D &msc SCRL_UP
-#define U_WH_L &msc SCRL_RIGHT
-#define U_WH_R &msc SCRL_LEFT
+#define U_WH_L &msc SCRL_LEFT
+#define U_WH_R &msc SCRL_RIGHT

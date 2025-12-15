@@ -303,6 +303,7 @@
             timeout-ms = <50>;
             key-positions = <0 11>;  // ` + CAPS (outer corners only)
             bindings = <&to 4>;
+            layers = <0>;
         };
     };
 
