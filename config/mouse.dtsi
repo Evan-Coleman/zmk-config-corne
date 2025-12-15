@@ -3,7 +3,7 @@
  * Fast (left hand) vs Slow/Precision (right hand)
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <dt-bindings/zmk/pointing.h>
