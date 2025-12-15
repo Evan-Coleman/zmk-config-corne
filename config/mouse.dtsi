@@ -60,21 +60,13 @@
     };
 };
 
-// Fast movement values using ZMK's encoding (3x speed = 1800)
-// Format: (value << 16 | axis) where axis: 0=horizontal, 1=vertical
-// Positive = right/up, negative = left/down
-#define MOVE_UP_FAST    ((1800) << 16 | 0x0001)
-#define MOVE_DOWN_FAST  ((-1800 & 0xFFFF) << 16 | 0x0001)
-#define MOVE_LEFT_FAST  ((-1800 & 0xFFFF) << 16 | 0x0000)
-#define MOVE_RIGHT_FAST ((1800) << 16 | 0x0000)
+// Fast movement macros (left hand) - uses faster acceleration behavior
+#define U_MS_U_FAST &mmv_fast MOVE_UP
+#define U_MS_D_FAST &mmv_fast MOVE_DOWN
+#define U_MS_L_FAST &mmv_fast MOVE_LEFT
+#define U_MS_R_FAST &mmv_fast MOVE_RIGHT
 
-// Fast movement macros (left hand) - 3x speed
-#define U_MS_U_FAST &mmv_fast MOVE_UP_FAST
-#define U_MS_D_FAST &mmv_fast MOVE_DOWN_FAST
-#define U_MS_L_FAST &mmv_fast MOVE_LEFT_FAST
-#define U_MS_R_FAST &mmv_fast MOVE_RIGHT_FAST
-
-// Slow/precision movement macros (right hand) - default speed
+// Slow/precision movement macros (right hand) - uses slower behavior
 #define U_MS_U_SLOW &mmv_slow MOVE_UP
 #define U_MS_D_SLOW &mmv_slow MOVE_DOWN
 #define U_MS_L_SLOW &mmv_slow MOVE_LEFT
