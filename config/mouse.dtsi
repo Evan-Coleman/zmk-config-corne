@@ -1,6 +1,5 @@
 /*
  * Mouse Layer Configuration
- * Two speed modes: Fast (left hand) and Slow/Precision (right hand)
  */
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
@@ -8,7 +7,7 @@
 
 #include <dt-bindings/zmk/pointing.h>
 
-// Default mmv settings (fallback)
+// Mouse movement settings
 &mmv {
     acceleration-exponent = <1>;
     time-to-max-speed-ms = <400>;
@@ -21,56 +20,6 @@
     time-to-max-speed-ms = <300>;
     delay-ms = <0>;
 };
-
-// Custom mouse movement behaviors
-/ {
-    behaviors {
-        // Fast movement (left hand - large sweeping movements)
-        mmv_fast: mouse_move_fast {
-            compatible = "zmk,behavior-input-two-axis";
-            label = "MOUSE_MOVE_FAST";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-            time-to-max-speed-ms = <300>;
-            acceleration-exponent = <1>;
-        };
-
-        // Slow/precision movement (right hand - fine control)
-        mmv_slow: mouse_move_slow {
-            compatible = "zmk,behavior-input-two-axis";
-            label = "MOUSE_MOVE_SLOW";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-            time-to-max-speed-ms = <800>;
-            acceleration-exponent = <0>;
-        };
-    };
-
-    // Input listeners required for custom mouse behaviors to work
-    mmv_fast_input_listener {
-        compatible = "zmk,input-listener";
-        device = <&mmv_fast>;
-    };
-
-    mmv_slow_input_listener {
-        compatible = "zmk,input-listener";
-        device = <&mmv_slow>;
-    };
-};
-
-// Fast movement macros (left hand) - uses faster acceleration behavior
-#define U_MS_U_FAST &mmv_fast MOVE_UP
-#define U_MS_D_FAST &mmv_fast MOVE_DOWN
-#define U_MS_L_FAST &mmv_fast MOVE_LEFT
-#define U_MS_R_FAST &mmv_fast MOVE_RIGHT
-
-// Slow/precision movement macros (right hand) - uses slower behavior
-#define U_MS_U_SLOW &mmv_slow MOVE_UP
-#define U_MS_D_SLOW &mmv_slow MOVE_DOWN
-#define U_MS_L_SLOW &mmv_slow MOVE_LEFT
-#define U_MS_R_SLOW &mmv_slow MOVE_RIGHT
 
 // Scroll macros (vim-style up/down only)
 #define U_WH_U &msc SCRL_DOWN

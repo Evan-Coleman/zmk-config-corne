@@ -301,7 +301,7 @@
         bt_combo {
             timeout-ms = <50>;
             key-positions = <1 10>;  // Q + ; (top row inner corners)
-            bindings = <&to 4>;
+            bindings = <&tog 4>;
             layers = <0>;
         };
     };
