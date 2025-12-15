@@ -47,6 +47,17 @@
             acceleration-exponent = <0>;
         };
     };
+
+    // Input listeners required for custom mouse behaviors to work
+    mmv_fast_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&mmv_fast>;
+    };
+
+    mmv_slow_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&mmv_slow>;
+    };
 };
 
 // Fast movement macros (left hand)

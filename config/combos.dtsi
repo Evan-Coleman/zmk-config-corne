@@ -296,11 +296,12 @@
             layers = <0>;
         };
 
-        // ========== EXISTING COMBO (preserved) ==========
+        // ========== BT LAYER ACCESS (4 corners) ==========
 
         bt_combo {
+            timeout-ms = <50>;
+            key-positions = <0 1 10 11>;  // ` Q ; CAPS (four corners)
             bindings = <&to 4>;
-            key-positions = <0 1 10 11>;
             layers = <0>;
         };
     };
