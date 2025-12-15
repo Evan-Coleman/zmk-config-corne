@@ -447,6 +447,8 @@ path.combo {
 </g>
 <g class="combo combopos-31">
 <path d="M420,49 l-373,0" class="combo"/>
+<path d="M420,49 l-317,0" class="combo"/>
+<path d="M420,49 l317,0" class="combo"/>
 <path d="M420,49 l373,0" class="combo"/>
 <rect rx="6" ry="6" x="406" y="36" width="28" height="26" class="combo"/>
 <a href="#BT">
