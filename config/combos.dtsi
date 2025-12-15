@@ -296,11 +296,11 @@
             layers = <0>;
         };
 
-        // ========== BT LAYER ACCESS (4 corners) ==========
+        // ========== BT LAYER ACCESS (outer corners) ==========
 
         bt_combo {
             timeout-ms = <50>;
-            key-positions = <0 1 10 11>;  // ` Q ; CAPS (four corners)
+            key-positions = <0 11>;  // ` + CAPS (outer corners, easy 2-key)
             bindings = <&to 4>;
             layers = <0>;
         };

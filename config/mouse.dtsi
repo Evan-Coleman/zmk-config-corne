@@ -60,13 +60,19 @@
     };
 };
 
-// Fast movement macros (left hand)
-#define U_MS_U_FAST &mmv_fast MOVE_UP
-#define U_MS_D_FAST &mmv_fast MOVE_DOWN
-#define U_MS_L_FAST &mmv_fast MOVE_LEFT
-#define U_MS_R_FAST &mmv_fast MOVE_RIGHT
+// Custom fast movement values (3x default speed = 1800)
+#define MOVE_UP_FAST    (1800 << 16 | 0x0000)
+#define MOVE_DOWN_FAST  (1800 << 16 | 0x0001)
+#define MOVE_LEFT_FAST  (1800 << 16 | 0x0002)
+#define MOVE_RIGHT_FAST (1800 << 16 | 0x0003)
 
-// Slow/precision movement macros (right hand)
+// Fast movement macros (left hand) - 3x speed
+#define U_MS_U_FAST &mmv_fast MOVE_UP_FAST
+#define U_MS_D_FAST &mmv_fast MOVE_DOWN_FAST
+#define U_MS_L_FAST &mmv_fast MOVE_LEFT_FAST
+#define U_MS_R_FAST &mmv_fast MOVE_RIGHT_FAST
+
+// Slow/precision movement macros (right hand) - default speed
 #define U_MS_U_SLOW &mmv_slow MOVE_UP
 #define U_MS_D_SLOW &mmv_slow MOVE_DOWN
 #define U_MS_L_SLOW &mmv_slow MOVE_LEFT
