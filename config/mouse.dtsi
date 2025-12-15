@@ -1,5 +1,6 @@
 /*
  * Mouse Layer Configuration
+ * Fast (left hand) vs Slow/Precision (right hand)
  */
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
@@ -7,18 +8,41 @@
 
 #include <dt-bindings/zmk/pointing.h>
 
-// Mouse movement settings
-&mmv {
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <400>;
-    delay-ms = <0>;
-};
-
 // Scroll settings - linear for precision
 &msc {
     acceleration-exponent = <0>;
     time-to-max-speed-ms = <300>;
     delay-ms = <0>;
+};
+
+/ {
+    behaviors {
+        // Fast mouse - quick acceleration for large movements
+        mmv_f: mmv_fast {
+            compatible = "zmk,behavior-input-two-axis";
+            label = "MMV_FAST";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <200>;
+            acceleration-exponent = <1>;
+        };
+
+        // Slow mouse - no acceleration for precision
+        mmv_s: mmv_slow {
+            compatible = "zmk,behavior-input-two-axis";
+            label = "MMV_SLOW";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <600>;
+            acceleration-exponent = <0>;
+        };
+    };
+
+    // Input listeners - required for behaviors to work
+    mmv_f_il { compatible = "zmk,input-listener"; device = <&mmv_f>; };
+    mmv_s_il { compatible = "zmk,input-listener"; device = <&mmv_s>; };
 };
 
 // Scroll macros (vim-style up/down only)
