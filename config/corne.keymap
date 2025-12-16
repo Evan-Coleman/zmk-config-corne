@@ -287,9 +287,12 @@
         compatible = "zmk,combos";
 
         tobt {
-            bindings = <&to 4>;
+            timeout-ms = <150>;
+            require-prior-idle-ms = <0>;
             key-positions = <0 1 10 11>;
+            bindings = <&to 4>;
             layers = <0>;
+            slow-release;
         };
     };
 
