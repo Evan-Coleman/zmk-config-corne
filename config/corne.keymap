@@ -201,11 +201,9 @@
 
             // Continue on mouse movement and clicks
 
-            continue-list = <
-MOVE_UP MOVE_DOWN MOVE_LEFT MOVE_RIGHT
+            continue-list = <MOVE_UP MOVE_DOWN MOVE_LEFT MOVE_RIGHT
                             SCRL_UP SCRL_DOWN SCRL_LEFT SCRL_RIGHT
-                            MB1 MB2 MB
-            >;
+                            MB1 MB2 MB3>;
 
             ignore-modifiers;
         };
